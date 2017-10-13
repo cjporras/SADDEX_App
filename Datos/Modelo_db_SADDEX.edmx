@@ -1,0 +1,1564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SADDEXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CATEGORIA_BONOS">
+          <Key>
+            <PropertyRef Name="ID_CATEGORIA_BONO" />
+          </Key>
+          <Property Name="ID_CATEGORIA_BONO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOBRE_CATEGORIA_BONO" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="DETALLE_CATEGORIA_BNO" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FK_CLIENTE" Type="int" />
+        </EntityType>
+        <EntityType Name="CLIENTES">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CEDULA" Type="int" Nullable="false" />
+          <Property Name="NOMBRE_COMPLETO" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="PRIMER_APELLIDO" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="SEGUNDO_APELLIDO" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="PROVINCIA" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="CANTON" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="DISTRITO" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="OTRAS_SEÑAS" Type="nchar" MaxLength="100" />
+          <Property Name="CORREO_ELECTRONICO" Type="nchar" MaxLength="100" />
+          <Property Name="NACIONALIDAD" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="TELEFONO_1" Type="int" Nullable="false" />
+          <Property Name="TELEFONO_2" Type="int" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="date" Nullable="false" />
+          <Property Name="SEXO" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ESTADO_TRAMITES">
+          <Key>
+            <PropertyRef Name="ID_ESTADO_TRAMITE" />
+          </Key>
+          <Property Name="ID_ESTADO_TRAMITE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ESTADO_DOCUMENTO_PERITO" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="ESTADO_SOLICITUD" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="ESTADO_PERMISO_CONSTRUCCION" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="ESTADO_ARQUITECTURA" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="ESTADO_BANHVI" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="ESTADO_MUCAP" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="DIS" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="DESEMBOLSOS" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="CASOS_FORMALIZADOS" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="APC" Type="nchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EXPEDIENTES_DIGITALES">
+          <Key>
+            <PropertyRef Name="ID_EXPEDIENTE_DIGITAL" />
+          </Key>
+          <Property Name="ID_EXPEDIENTE_DIGITAL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_CATEGORIA_BONO" Type="int" Nullable="false" />
+          <Property Name="NOMBRE_EXPEDIENTE" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FK_OBRA" Type="int" Nullable="false" />
+          <Property Name="FK_USUARIO" Type="int" Nullable="false" />
+          <Property Name="FK_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="OBSERVACIONES" Type="nchar" MaxLength="100" />
+          <Property Name="FK_ESTADO_TRAMITE" Type="int" Nullable="false" />
+          <Property Name="FK_REQUISITOS_INICIALES" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FACTURAS">
+          <Key>
+            <PropertyRef Name="ID_FACTURA" />
+          </Key>
+          <Property Name="ID_FACTURA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="FK_PROVEEDOR" Type="int" Nullable="false" />
+          <Property Name="FK_OUTSOURCING" Type="int" Nullable="false" />
+          <Property Name="FK_USUARIO" Type="int" Nullable="false" />
+          <Property Name="SUB_TOTAL" Type="int" Nullable="false" />
+          <Property Name="TOTAL" Type="int" Nullable="false" />
+          <Property Name="IMPUESTOS" Type="int" />
+          <Property Name="DETALLE" Type="nchar" MaxLength="100" />
+          <Property Name="CONCEPTO" Type="nchar" MaxLength="100" />
+          <Property Name="FECHA_FACTURA" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FUNCIONARIOS">
+          <Key>
+            <PropertyRef Name="ID_FUNCIONARIO" />
+          </Key>
+          <Property Name="ID_FUNCIONARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CEDULA" Type="int" Nullable="false" />
+          <Property Name="NOMBRE_COMPLETO" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="PRIMER_APELLIDO" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="SEGUNDO_APELLIDO" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="FK_PUESTO" Type="int" Nullable="false" />
+          <Property Name="PROVINCIA" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="CANTON" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="DISTRITO" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="OTRAS_SEÑAS" Type="nchar" MaxLength="100" />
+          <Property Name="CORREO_ELECTRONICO" Type="nchar" MaxLength="100" />
+          <Property Name="NACIONALIDAD" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="date" Nullable="false" />
+          <Property Name="FECHA_INGRESO" Type="date" Nullable="false" />
+          <Property Name="TELEFONO_1" Type="int" />
+          <Property Name="TELEFONO_2" Type="int" />
+          <Property Name="FECHA_CESANTIA" Type="date" />
+          <Property Name="SEXO" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LISTAS_OUTSOURCING">
+          <Key>
+            <PropertyRef Name="ID_LISTA_OUTSOURCING" />
+          </Key>
+          <Property Name="ID_LISTA_OUTSOURCING" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_SERVICIO" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="SALARIO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OBRAS">
+          <Key>
+            <PropertyRef Name="ID_OBRA" />
+          </Key>
+          <Property Name="ID_OBRA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_USUARIO" Type="int" Nullable="false" />
+          <Property Name="LUGAR_OBRA" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FECHA_INICIO_OBRA" Type="date" Nullable="false" />
+          <Property Name="FECHA_FINAL_OBRA" Type="date" />
+          <Property Name="COSTO_OBRA" Type="int" />
+          <Property Name="FK_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="DETALLE_OBRA" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="OUTSOURCING_S">
+          <Key>
+            <PropertyRef Name="ID_OUTSOURCING" />
+          </Key>
+          <Property Name="ID_OUTSOURCING" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_USUARIO" Type="int" Nullable="false" />
+          <Property Name="FK_LISTA_OUTSOURCING" Type="int" Nullable="false" />
+          <Property Name="FK_OBRA" Type="int" Nullable="false" />
+          <Property Name="FECHA_CONTRATACION" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAGOS_X_PROVEEDORES">
+          <Key>
+            <PropertyRef Name="ID_PAGO_X_PROVEEDOR" />
+          </Key>
+          <Property Name="ID_PAGO_X_PROVEEDOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_NOMBRE_PROVEEDOR" Type="int" Nullable="false" />
+          <Property Name="MONTO_CHEQUE" Type="int" Nullable="false" />
+          <Property Name="FECHA_CHEQUE" Type="date" Nullable="false" />
+          <Property Name="NUMERO_CHEQUE" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="FK_USUARIO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROVEEDORES">
+          <Key>
+            <PropertyRef Name="ID_PROVEEDOR" />
+          </Key>
+          <Property Name="ID_PROVEEDOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_PROVEEDOR" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="UBICACION" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="TELEFONO_1" Type="int" Nullable="false" />
+          <Property Name="TELEFONO_2" Type="int" />
+          <Property Name="CEDULA_JURIDICA" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="PUESTOS">
+          <Key>
+            <PropertyRef Name="ID_PUESTO" />
+          </Key>
+          <Property Name="ID_PUESTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_PUESTO" Type="nchar" MaxLength="250" Nullable="false" />
+          <Property Name="DETALLE_PUESTO" Type="nchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="REQUISITOS_INICIALES">
+          <Key>
+            <PropertyRef Name="ID_REQUISITO" />
+          </Key>
+          <Property Name="ID_REQUISITO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COPIA_CEDULA" Type="nchar" MaxLength="10" />
+          <Property Name="PROPIEDADES" Type="nchar" MaxLength="10" />
+          <Property Name="COPIA_RECIBOS_SERVICIOS_PUBLICOS" Type="nchar" MaxLength="10" />
+          <Property Name="BONOS_ANTERIORES" Type="nchar" MaxLength="10" />
+          <Property Name="CERTIFICACION_IMPUESTOS" Type="nchar" MaxLength="10" />
+          <Property Name="EXAMEN_POZO" Type="nchar" MaxLength="10" />
+          <Property Name="CERTIFICACION_ESTADO_CIVIL" Type="nchar" MaxLength="10" />
+          <Property Name="TERRENO_LOTE" Type="nchar" MaxLength="10" />
+          <Property Name="REPORTE_SICERE" Type="nchar" MaxLength="10" />
+          <Property Name="CONSTANCIA_CONTADOR" Type="nchar" MaxLength="10" />
+          <Property Name="CONSTANCIA_SALARIO" Type="nchar" MaxLength="10" />
+          <Property Name="ASADA" Type="nchar" MaxLength="10" />
+          <Property Name="FK_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="PLANO_CATASTRO" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TIPO_BONOS">
+          <Key>
+            <PropertyRef Name="ID_TIPO_BONO" />
+          </Key>
+          <Property Name="ID_TIPO_BONO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_TIPO_BONO" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="DETALLE_TIPO_BONO" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FK_CLIENTE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UBICACION_EXPEDIENTES">
+          <Key>
+            <PropertyRef Name="ID_UBICACION_EXPEIENTE" />
+          </Key>
+          <Property Name="ID_UBICACION_EXPEIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_UBICACION" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="FK_USUARIO" Type="int" Nullable="false" />
+          <Property Name="DETALLE_UBICACION" Type="nchar" MaxLength="100" />
+          <Property Name="FK_EXPEDIENTE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_USUARIO" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="CONTRASEÑA" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="FK_FUNCIONARIO" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CATEGORIA_BONOS_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="0..1" />
+          <End Role="CATEGORIA_BONOS" Type="Self.CATEGORIA_BONOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="CATEGORIA_BONOS">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_CATEGORIA_BONOS">
+          <End Role="CATEGORIA_BONOS" Type="Self.CATEGORIA_BONOS" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORIA_BONOS">
+              <PropertyRef Name="ID_CATEGORIA_BONO" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_CATEGORIA_BONO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_ESTADO_TRAMITES">
+          <End Role="ESTADO_TRAMITES" Type="Self.ESTADO_TRAMITES" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_TRAMITES">
+              <PropertyRef Name="ID_ESTADO_TRAMITE" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_ESTADO_TRAMITE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_OBRAS">
+          <End Role="OBRAS" Type="Self.OBRAS" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBRAS">
+              <PropertyRef Name="ID_OBRA" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_OBRA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_REQUISITOS_INICIALES">
+          <End Role="REQUISITOS_INICIALES" Type="Self.REQUISITOS_INICIALES" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUISITOS_INICIALES">
+              <PropertyRef Name="ID_REQUISITO" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_REQUISITOS_INICIALES" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURAS_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURAS_OUTSOURCING_S">
+          <End Role="OUTSOURCING_S" Type="Self.OUTSOURCING_S" Multiplicity="1" />
+          <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OUTSOURCING_S">
+              <PropertyRef Name="ID_OUTSOURCING" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="FK_OUTSOURCING" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURAS_PROVEEDORES">
+          <End Role="PROVEEDORES" Type="Self.PROVEEDORES" Multiplicity="1" />
+          <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVEEDORES">
+              <PropertyRef Name="ID_PROVEEDOR" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="FK_PROVEEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURAS_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FUNCIONARIOS_PUESTOS">
+          <End Role="PUESTOS" Type="Self.PUESTOS" Multiplicity="1" />
+          <End Role="FUNCIONARIOS" Type="Self.FUNCIONARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PUESTOS">
+              <PropertyRef Name="ID_PUESTO" />
+            </Principal>
+            <Dependent Role="FUNCIONARIOS">
+              <PropertyRef Name="FK_PUESTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OBRAS_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="OBRAS" Type="Self.OBRAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="OBRAS">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OBRAS_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="OBRAS" Type="Self.OBRAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="OBRAS">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OUTSOURCING_S_LISTAS_OUTSOURCING">
+          <End Role="LISTAS_OUTSOURCING" Type="Self.LISTAS_OUTSOURCING" Multiplicity="1" />
+          <End Role="OUTSOURCING_S" Type="Self.OUTSOURCING_S" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LISTAS_OUTSOURCING">
+              <PropertyRef Name="ID_LISTA_OUTSOURCING" />
+            </Principal>
+            <Dependent Role="OUTSOURCING_S">
+              <PropertyRef Name="FK_LISTA_OUTSOURCING" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OUTSOURCING_S_OBRAS">
+          <End Role="OBRAS" Type="Self.OBRAS" Multiplicity="1" />
+          <End Role="OUTSOURCING_S" Type="Self.OUTSOURCING_S" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBRAS">
+              <PropertyRef Name="ID_OBRA" />
+            </Principal>
+            <Dependent Role="OUTSOURCING_S">
+              <PropertyRef Name="FK_OBRA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OUTSOURCING_S_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="OUTSOURCING_S" Type="Self.OUTSOURCING_S" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="OUTSOURCING_S">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAGOS_X_PROVEEDORES_PROVEEDORES">
+          <End Role="PROVEEDORES" Type="Self.PROVEEDORES" Multiplicity="1" />
+          <End Role="PAGOS_X_PROVEEDORES" Type="Self.PAGOS_X_PROVEEDORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVEEDORES">
+              <PropertyRef Name="ID_PROVEEDOR" />
+            </Principal>
+            <Dependent Role="PAGOS_X_PROVEEDORES">
+              <PropertyRef Name="FK_NOMBRE_PROVEEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAGOS_X_PROVEEDORES_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="PAGOS_X_PROVEEDORES" Type="Self.PAGOS_X_PROVEEDORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="PAGOS_X_PROVEEDORES">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQUISITOS_INICIALES_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="REQUISITOS_INICIALES" Type="Self.REQUISITOS_INICIALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="REQUISITOS_INICIALES">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIPO_BONOS_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="TIPO_BONOS" Type="Self.TIPO_BONOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="TIPO_BONOS">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UBICACION_EXPEDIENTES_EXPEDIENTES_DIGITALES">
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="1" />
+          <End Role="UBICACION_EXPEDIENTES" Type="Self.UBICACION_EXPEDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="ID_EXPEDIENTE_DIGITAL" />
+            </Principal>
+            <Dependent Role="UBICACION_EXPEDIENTES">
+              <PropertyRef Name="FK_EXPEDIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UBICACION_EXPEDIENTES_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="UBICACION_EXPEDIENTES" Type="Self.UBICACION_EXPEDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="UBICACION_EXPEDIENTES">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIOS_FUNCIONARIOS">
+          <End Role="FUNCIONARIOS" Type="Self.FUNCIONARIOS" Multiplicity="1" />
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FUNCIONARIOS">
+              <PropertyRef Name="ID_FUNCIONARIO" />
+            </Principal>
+            <Dependent Role="USUARIOS">
+              <PropertyRef Name="FK_FUNCIONARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SADDEXModelStoreContainer">
+          <EntitySet Name="CATEGORIA_BONOS" EntityType="Self.CATEGORIA_BONOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ESTADO_TRAMITES" EntityType="Self.ESTADO_TRAMITES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EXPEDIENTES_DIGITALES" EntityType="Self.EXPEDIENTES_DIGITALES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FACTURAS" EntityType="Self.FACTURAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FUNCIONARIOS" EntityType="Self.FUNCIONARIOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LISTAS_OUTSOURCING" EntityType="Self.LISTAS_OUTSOURCING" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OBRAS" EntityType="Self.OBRAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OUTSOURCING_S" EntityType="Self.OUTSOURCING_S" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAGOS_X_PROVEEDORES" EntityType="Self.PAGOS_X_PROVEEDORES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROVEEDORES" EntityType="Self.PROVEEDORES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PUESTOS" EntityType="Self.PUESTOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REQUISITOS_INICIALES" EntityType="Self.REQUISITOS_INICIALES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_BONOS" EntityType="Self.TIPO_BONOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UBICACION_EXPEDIENTES" EntityType="Self.UBICACION_EXPEDIENTES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CATEGORIA_BONOS_CLIENTES" Association="Self.FK_CATEGORIA_BONOS_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="CATEGORIA_BONOS" EntitySet="CATEGORIA_BONOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_CATEGORIA_BONOS" Association="Self.FK_EXPEDIENTES_DIGITALES_CATEGORIA_BONOS">
+            <End Role="CATEGORIA_BONOS" EntitySet="CATEGORIA_BONOS" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_CLIENTES" Association="Self.FK_EXPEDIENTES_DIGITALES_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_ESTADO_TRAMITES" Association="Self.FK_EXPEDIENTES_DIGITALES_ESTADO_TRAMITES">
+            <End Role="ESTADO_TRAMITES" EntitySet="ESTADO_TRAMITES" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_OBRAS" Association="Self.FK_EXPEDIENTES_DIGITALES_OBRAS">
+            <End Role="OBRAS" EntitySet="OBRAS" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_REQUISITOS_INICIALES" Association="Self.FK_EXPEDIENTES_DIGITALES_REQUISITOS_INICIALES">
+            <End Role="REQUISITOS_INICIALES" EntitySet="REQUISITOS_INICIALES" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_USUARIOS" Association="Self.FK_EXPEDIENTES_DIGITALES_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURAS_CLIENTES" Association="Self.FK_FACTURAS_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURAS_OUTSOURCING_S" Association="Self.FK_FACTURAS_OUTSOURCING_S">
+            <End Role="OUTSOURCING_S" EntitySet="OUTSOURCING_S" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURAS_PROVEEDORES" Association="Self.FK_FACTURAS_PROVEEDORES">
+            <End Role="PROVEEDORES" EntitySet="PROVEEDORES" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURAS_USUARIOS" Association="Self.FK_FACTURAS_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FUNCIONARIOS_PUESTOS" Association="Self.FK_FUNCIONARIOS_PUESTOS">
+            <End Role="PUESTOS" EntitySet="PUESTOS" />
+            <End Role="FUNCIONARIOS" EntitySet="FUNCIONARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OBRAS_CLIENTES" Association="Self.FK_OBRAS_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="OBRAS" EntitySet="OBRAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OBRAS_USUARIOS" Association="Self.FK_OBRAS_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="OBRAS" EntitySet="OBRAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OUTSOURCING_S_LISTAS_OUTSOURCING" Association="Self.FK_OUTSOURCING_S_LISTAS_OUTSOURCING">
+            <End Role="LISTAS_OUTSOURCING" EntitySet="LISTAS_OUTSOURCING" />
+            <End Role="OUTSOURCING_S" EntitySet="OUTSOURCING_S" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OUTSOURCING_S_OBRAS" Association="Self.FK_OUTSOURCING_S_OBRAS">
+            <End Role="OBRAS" EntitySet="OBRAS" />
+            <End Role="OUTSOURCING_S" EntitySet="OUTSOURCING_S" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OUTSOURCING_S_USUARIOS" Association="Self.FK_OUTSOURCING_S_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="OUTSOURCING_S" EntitySet="OUTSOURCING_S" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAGOS_X_PROVEEDORES_PROVEEDORES" Association="Self.FK_PAGOS_X_PROVEEDORES_PROVEEDORES">
+            <End Role="PROVEEDORES" EntitySet="PROVEEDORES" />
+            <End Role="PAGOS_X_PROVEEDORES" EntitySet="PAGOS_X_PROVEEDORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAGOS_X_PROVEEDORES_USUARIOS" Association="Self.FK_PAGOS_X_PROVEEDORES_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="PAGOS_X_PROVEEDORES" EntitySet="PAGOS_X_PROVEEDORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQUISITOS_INICIALES_CLIENTES" Association="Self.FK_REQUISITOS_INICIALES_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="REQUISITOS_INICIALES" EntitySet="REQUISITOS_INICIALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIPO_BONOS_CLIENTES" Association="Self.FK_TIPO_BONOS_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="TIPO_BONOS" EntitySet="TIPO_BONOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UBICACION_EXPEDIENTES_EXPEDIENTES_DIGITALES" Association="Self.FK_UBICACION_EXPEDIENTES_EXPEDIENTES_DIGITALES">
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+            <End Role="UBICACION_EXPEDIENTES" EntitySet="UBICACION_EXPEDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UBICACION_EXPEDIENTES_USUARIOS" Association="Self.FK_UBICACION_EXPEDIENTES_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="UBICACION_EXPEDIENTES" EntitySet="UBICACION_EXPEDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIOS_FUNCIONARIOS" Association="Self.FK_USUARIOS_FUNCIONARIOS">
+            <End Role="FUNCIONARIOS" EntitySet="FUNCIONARIOS" />
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SADDEXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CATEGORIA_BONOS">
+          <Key>
+            <PropertyRef Name="ID_CATEGORIA_BONO" />
+          </Key>
+          <Property Name="ID_CATEGORIA_BONO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOBRE_CATEGORIA_BONO" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DETALLE_CATEGORIA_BNO" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FK_CLIENTE" Type="Int32" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK_CATEGORIA_BONOS_CLIENTES" FromRole="CATEGORIA_BONOS" ToRole="CLIENTES" />
+          <NavigationProperty Name="EXPEDIENTES_DIGITALES" Relationship="Self.FK_EXPEDIENTES_DIGITALES_CATEGORIA_BONOS" FromRole="CATEGORIA_BONOS" ToRole="EXPEDIENTES_DIGITALES" />
+        </EntityType>
+        <EntityType Name="CLIENTES">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CEDULA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_COMPLETO" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PRIMER_APELLIDO" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SEGUNDO_APELLIDO" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PROVINCIA" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CANTON" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DISTRITO" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="OTRAS_SEÑAS" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="NACIONALIDAD" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TELEFONO_1" Type="Int32" Nullable="false" />
+          <Property Name="TELEFONO_2" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SEXO" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CATEGORIA_BONOS" Relationship="Self.FK_CATEGORIA_BONOS_CLIENTES" FromRole="CLIENTES" ToRole="CATEGORIA_BONOS" />
+          <NavigationProperty Name="EXPEDIENTES_DIGITALES" Relationship="Self.FK_EXPEDIENTES_DIGITALES_CLIENTES" FromRole="CLIENTES" ToRole="EXPEDIENTES_DIGITALES" />
+          <NavigationProperty Name="FACTURAS" Relationship="Self.FK_FACTURAS_CLIENTES" FromRole="CLIENTES" ToRole="FACTURAS" />
+          <NavigationProperty Name="OBRAS" Relationship="Self.FK_OBRAS_CLIENTES" FromRole="CLIENTES" ToRole="OBRAS" />
+          <NavigationProperty Name="REQUISITOS_INICIALES" Relationship="Self.FK_REQUISITOS_INICIALES_CLIENTES" FromRole="CLIENTES" ToRole="REQUISITOS_INICIALES" />
+          <NavigationProperty Name="TIPO_BONOS" Relationship="Self.FK_TIPO_BONOS_CLIENTES" FromRole="CLIENTES" ToRole="TIPO_BONOS" />
+        </EntityType>
+        <EntityType Name="ESTADO_TRAMITES">
+          <Key>
+            <PropertyRef Name="ID_ESTADO_TRAMITE" />
+          </Key>
+          <Property Name="ID_ESTADO_TRAMITE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ESTADO_DOCUMENTO_PERITO" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ESTADO_SOLICITUD" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ESTADO_PERMISO_CONSTRUCCION" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ESTADO_ARQUITECTURA" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ESTADO_BANHVI" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ESTADO_MUCAP" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DIS" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DESEMBOLSOS" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CASOS_FORMALIZADOS" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="APC" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EXPEDIENTES_DIGITALES" Relationship="Self.FK_EXPEDIENTES_DIGITALES_ESTADO_TRAMITES" FromRole="ESTADO_TRAMITES" ToRole="EXPEDIENTES_DIGITALES" />
+        </EntityType>
+        <EntityType Name="EXPEDIENTES_DIGITALES">
+          <Key>
+            <PropertyRef Name="ID_EXPEDIENTE_DIGITAL" />
+          </Key>
+          <Property Name="ID_EXPEDIENTE_DIGITAL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_CATEGORIA_BONO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_EXPEDIENTE" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FK_OBRA" Type="Int32" Nullable="false" />
+          <Property Name="FK_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="FK_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="OBSERVACIONES" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FK_ESTADO_TRAMITE" Type="Int32" Nullable="false" />
+          <Property Name="FK_REQUISITOS_INICIALES" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CATEGORIA_BONOS" Relationship="Self.FK_EXPEDIENTES_DIGITALES_CATEGORIA_BONOS" FromRole="EXPEDIENTES_DIGITALES" ToRole="CATEGORIA_BONOS" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK_EXPEDIENTES_DIGITALES_CLIENTES" FromRole="EXPEDIENTES_DIGITALES" ToRole="CLIENTES" />
+          <NavigationProperty Name="ESTADO_TRAMITES" Relationship="Self.FK_EXPEDIENTES_DIGITALES_ESTADO_TRAMITES" FromRole="EXPEDIENTES_DIGITALES" ToRole="ESTADO_TRAMITES" />
+          <NavigationProperty Name="OBRAS" Relationship="Self.FK_EXPEDIENTES_DIGITALES_OBRAS" FromRole="EXPEDIENTES_DIGITALES" ToRole="OBRAS" />
+          <NavigationProperty Name="REQUISITOS_INICIALES" Relationship="Self.FK_EXPEDIENTES_DIGITALES_REQUISITOS_INICIALES" FromRole="EXPEDIENTES_DIGITALES" ToRole="REQUISITOS_INICIALES" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK_EXPEDIENTES_DIGITALES_USUARIOS" FromRole="EXPEDIENTES_DIGITALES" ToRole="USUARIOS" />
+          <NavigationProperty Name="UBICACION_EXPEDIENTES" Relationship="Self.FK_UBICACION_EXPEDIENTES_EXPEDIENTES_DIGITALES" FromRole="EXPEDIENTES_DIGITALES" ToRole="UBICACION_EXPEDIENTES" />
+        </EntityType>
+        <EntityType Name="FACTURAS">
+          <Key>
+            <PropertyRef Name="ID_FACTURA" />
+          </Key>
+          <Property Name="ID_FACTURA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="FK_PROVEEDOR" Type="Int32" Nullable="false" />
+          <Property Name="FK_OUTSOURCING" Type="Int32" Nullable="false" />
+          <Property Name="FK_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="SUB_TOTAL" Type="Int32" Nullable="false" />
+          <Property Name="TOTAL" Type="Int32" Nullable="false" />
+          <Property Name="IMPUESTOS" Type="Int32" />
+          <Property Name="DETALLE" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="CONCEPTO" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FECHA_FACTURA" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK_FACTURAS_CLIENTES" FromRole="FACTURAS" ToRole="CLIENTES" />
+          <NavigationProperty Name="OUTSOURCING_S" Relationship="Self.FK_FACTURAS_OUTSOURCING_S" FromRole="FACTURAS" ToRole="OUTSOURCING_S" />
+          <NavigationProperty Name="PROVEEDORES" Relationship="Self.FK_FACTURAS_PROVEEDORES" FromRole="FACTURAS" ToRole="PROVEEDORES" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK_FACTURAS_USUARIOS" FromRole="FACTURAS" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="FUNCIONARIOS">
+          <Key>
+            <PropertyRef Name="ID_FUNCIONARIO" />
+          </Key>
+          <Property Name="ID_FUNCIONARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CEDULA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_COMPLETO" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PRIMER_APELLIDO" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SEGUNDO_APELLIDO" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FK_PUESTO" Type="Int32" Nullable="false" />
+          <Property Name="PROVINCIA" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CANTON" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DISTRITO" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="OTRAS_SEÑAS" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="NACIONALIDAD" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FECHA_INGRESO" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TELEFONO_1" Type="Int32" />
+          <Property Name="TELEFONO_2" Type="Int32" />
+          <Property Name="FECHA_CESANTIA" Type="DateTime" Precision="0" />
+          <Property Name="SEXO" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PUESTOS" Relationship="Self.FK_FUNCIONARIOS_PUESTOS" FromRole="FUNCIONARIOS" ToRole="PUESTOS" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK_USUARIOS_FUNCIONARIOS" FromRole="FUNCIONARIOS" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="LISTAS_OUTSOURCING">
+          <Key>
+            <PropertyRef Name="ID_LISTA_OUTSOURCING" />
+          </Key>
+          <Property Name="ID_LISTA_OUTSOURCING" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_SERVICIO" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SALARIO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OUTSOURCING_S" Relationship="Self.FK_OUTSOURCING_S_LISTAS_OUTSOURCING" FromRole="LISTAS_OUTSOURCING" ToRole="OUTSOURCING_S" />
+        </EntityType>
+        <EntityType Name="OBRAS">
+          <Key>
+            <PropertyRef Name="ID_OBRA" />
+          </Key>
+          <Property Name="ID_OBRA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="LUGAR_OBRA" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FECHA_INICIO_OBRA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FECHA_FINAL_OBRA" Type="DateTime" Precision="0" />
+          <Property Name="COSTO_OBRA" Type="Int32" />
+          <Property Name="FK_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="DETALLE_OBRA" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK_OBRAS_CLIENTES" FromRole="OBRAS" ToRole="CLIENTES" />
+          <NavigationProperty Name="EXPEDIENTES_DIGITALES" Relationship="Self.FK_EXPEDIENTES_DIGITALES_OBRAS" FromRole="OBRAS" ToRole="EXPEDIENTES_DIGITALES" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK_OBRAS_USUARIOS" FromRole="OBRAS" ToRole="USUARIOS" />
+          <NavigationProperty Name="OUTSOURCING_S" Relationship="Self.FK_OUTSOURCING_S_OBRAS" FromRole="OBRAS" ToRole="OUTSOURCING_S" />
+        </EntityType>
+        <EntityType Name="OUTSOURCING_S">
+          <Key>
+            <PropertyRef Name="ID_OUTSOURCING" />
+          </Key>
+          <Property Name="ID_OUTSOURCING" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="FK_LISTA_OUTSOURCING" Type="Int32" Nullable="false" />
+          <Property Name="FK_OBRA" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_CONTRATACION" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="FACTURAS" Relationship="Self.FK_FACTURAS_OUTSOURCING_S" FromRole="OUTSOURCING_S" ToRole="FACTURAS" />
+          <NavigationProperty Name="LISTAS_OUTSOURCING" Relationship="Self.FK_OUTSOURCING_S_LISTAS_OUTSOURCING" FromRole="OUTSOURCING_S" ToRole="LISTAS_OUTSOURCING" />
+          <NavigationProperty Name="OBRAS" Relationship="Self.FK_OUTSOURCING_S_OBRAS" FromRole="OUTSOURCING_S" ToRole="OBRAS" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK_OUTSOURCING_S_USUARIOS" FromRole="OUTSOURCING_S" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="PAGOS_X_PROVEEDORES">
+          <Key>
+            <PropertyRef Name="ID_PAGO_X_PROVEEDOR" />
+          </Key>
+          <Property Name="ID_PAGO_X_PROVEEDOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_NOMBRE_PROVEEDOR" Type="Int32" Nullable="false" />
+          <Property Name="MONTO_CHEQUE" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_CHEQUE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NUMERO_CHEQUE" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FK_USUARIO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PROVEEDORES" Relationship="Self.FK_PAGOS_X_PROVEEDORES_PROVEEDORES" FromRole="PAGOS_X_PROVEEDORES" ToRole="PROVEEDORES" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK_PAGOS_X_PROVEEDORES_USUARIOS" FromRole="PAGOS_X_PROVEEDORES" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="PROVEEDORES">
+          <Key>
+            <PropertyRef Name="ID_PROVEEDOR" />
+          </Key>
+          <Property Name="ID_PROVEEDOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_PROVEEDOR" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UBICACION" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TELEFONO_1" Type="Int32" Nullable="false" />
+          <Property Name="TELEFONO_2" Type="Int32" />
+          <Property Name="CEDULA_JURIDICA" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="FACTURAS" Relationship="Self.FK_FACTURAS_PROVEEDORES" FromRole="PROVEEDORES" ToRole="FACTURAS" />
+          <NavigationProperty Name="PAGOS_X_PROVEEDORES" Relationship="Self.FK_PAGOS_X_PROVEEDORES_PROVEEDORES" FromRole="PROVEEDORES" ToRole="PAGOS_X_PROVEEDORES" />
+        </EntityType>
+        <EntityType Name="PUESTOS">
+          <Key>
+            <PropertyRef Name="ID_PUESTO" />
+          </Key>
+          <Property Name="ID_PUESTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_PUESTO" Type="String" MaxLength="250" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DETALLE_PUESTO" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="FUNCIONARIOS" Relationship="Self.FK_FUNCIONARIOS_PUESTOS" FromRole="PUESTOS" ToRole="FUNCIONARIOS" />
+        </EntityType>
+        <EntityType Name="REQUISITOS_INICIALES">
+          <Key>
+            <PropertyRef Name="ID_REQUISITO" />
+          </Key>
+          <Property Name="ID_REQUISITO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COPIA_CEDULA" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PROPIEDADES" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="COPIA_RECIBOS_SERVICIOS_PUBLICOS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="BONOS_ANTERIORES" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CERTIFICACION_IMPUESTOS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="EXAMEN_POZO" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CERTIFICACION_ESTADO_CIVIL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TERRENO_LOTE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="REPORTE_SICERE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CONSTANCIA_CONTADOR" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CONSTANCIA_SALARIO" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ASADA" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FK_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="PLANO_CATASTRO" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK_REQUISITOS_INICIALES_CLIENTES" FromRole="REQUISITOS_INICIALES" ToRole="CLIENTES" />
+          <NavigationProperty Name="EXPEDIENTES_DIGITALES" Relationship="Self.FK_EXPEDIENTES_DIGITALES_REQUISITOS_INICIALES" FromRole="REQUISITOS_INICIALES" ToRole="EXPEDIENTES_DIGITALES" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TIPO_BONOS">
+          <Key>
+            <PropertyRef Name="ID_TIPO_BONO" />
+          </Key>
+          <Property Name="ID_TIPO_BONO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_TIPO_BONO" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DETALLE_TIPO_BONO" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FK_CLIENTE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CLIENTES" Relationship="Self.FK_TIPO_BONOS_CLIENTES" FromRole="TIPO_BONOS" ToRole="CLIENTES" />
+        </EntityType>
+        <EntityType Name="UBICACION_EXPEDIENTES">
+          <Key>
+            <PropertyRef Name="ID_UBICACION_EXPEIENTE" />
+          </Key>
+          <Property Name="ID_UBICACION_EXPEIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_UBICACION" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FK_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="DETALLE_UBICACION" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="FK_EXPEDIENTE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EXPEDIENTES_DIGITALES" Relationship="Self.FK_UBICACION_EXPEDIENTES_EXPEDIENTES_DIGITALES" FromRole="UBICACION_EXPEDIENTES" ToRole="EXPEDIENTES_DIGITALES" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK_UBICACION_EXPEDIENTES_USUARIOS" FromRole="UBICACION_EXPEDIENTES" ToRole="USUARIOS" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CONTRASEÑA" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FK_FUNCIONARIO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EXPEDIENTES_DIGITALES" Relationship="Self.FK_EXPEDIENTES_DIGITALES_USUARIOS" FromRole="USUARIOS" ToRole="EXPEDIENTES_DIGITALES" />
+          <NavigationProperty Name="FACTURAS" Relationship="Self.FK_FACTURAS_USUARIOS" FromRole="USUARIOS" ToRole="FACTURAS" />
+          <NavigationProperty Name="FUNCIONARIOS" Relationship="Self.FK_USUARIOS_FUNCIONARIOS" FromRole="USUARIOS" ToRole="FUNCIONARIOS" />
+          <NavigationProperty Name="OBRAS" Relationship="Self.FK_OBRAS_USUARIOS" FromRole="USUARIOS" ToRole="OBRAS" />
+          <NavigationProperty Name="OUTSOURCING_S" Relationship="Self.FK_OUTSOURCING_S_USUARIOS" FromRole="USUARIOS" ToRole="OUTSOURCING_S" />
+          <NavigationProperty Name="PAGOS_X_PROVEEDORES" Relationship="Self.FK_PAGOS_X_PROVEEDORES_USUARIOS" FromRole="USUARIOS" ToRole="PAGOS_X_PROVEEDORES" />
+          <NavigationProperty Name="UBICACION_EXPEDIENTES" Relationship="Self.FK_UBICACION_EXPEDIENTES_USUARIOS" FromRole="USUARIOS" ToRole="UBICACION_EXPEDIENTES" />
+        </EntityType>
+        <Association Name="FK_CATEGORIA_BONOS_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="0..1" />
+          <End Role="CATEGORIA_BONOS" Type="Self.CATEGORIA_BONOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="CATEGORIA_BONOS">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_CATEGORIA_BONOS">
+          <End Role="CATEGORIA_BONOS" Type="Self.CATEGORIA_BONOS" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORIA_BONOS">
+              <PropertyRef Name="ID_CATEGORIA_BONO" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_CATEGORIA_BONO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURAS_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OBRAS_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="OBRAS" Type="Self.OBRAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="OBRAS">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REQUISITOS_INICIALES_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="REQUISITOS_INICIALES" Type="Self.REQUISITOS_INICIALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="REQUISITOS_INICIALES">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIPO_BONOS_CLIENTES">
+          <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+          <End Role="TIPO_BONOS" Type="Self.TIPO_BONOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTES">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Principal>
+            <Dependent Role="TIPO_BONOS">
+              <PropertyRef Name="FK_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_ESTADO_TRAMITES">
+          <End Role="ESTADO_TRAMITES" Type="Self.ESTADO_TRAMITES" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_TRAMITES">
+              <PropertyRef Name="ID_ESTADO_TRAMITE" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_ESTADO_TRAMITE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_OBRAS">
+          <End Role="OBRAS" Type="Self.OBRAS" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBRAS">
+              <PropertyRef Name="ID_OBRA" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_OBRA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_REQUISITOS_INICIALES">
+          <End Role="REQUISITOS_INICIALES" Type="Self.REQUISITOS_INICIALES" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REQUISITOS_INICIALES">
+              <PropertyRef Name="ID_REQUISITO" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_REQUISITOS_INICIALES" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EXPEDIENTES_DIGITALES_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UBICACION_EXPEDIENTES_EXPEDIENTES_DIGITALES">
+          <End Role="EXPEDIENTES_DIGITALES" Type="Self.EXPEDIENTES_DIGITALES" Multiplicity="1" />
+          <End Role="UBICACION_EXPEDIENTES" Type="Self.UBICACION_EXPEDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EXPEDIENTES_DIGITALES">
+              <PropertyRef Name="ID_EXPEDIENTE_DIGITAL" />
+            </Principal>
+            <Dependent Role="UBICACION_EXPEDIENTES">
+              <PropertyRef Name="FK_EXPEDIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURAS_OUTSOURCING_S">
+          <End Role="OUTSOURCING_S" Type="Self.OUTSOURCING_S" Multiplicity="1" />
+          <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OUTSOURCING_S">
+              <PropertyRef Name="ID_OUTSOURCING" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="FK_OUTSOURCING" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURAS_PROVEEDORES">
+          <End Role="PROVEEDORES" Type="Self.PROVEEDORES" Multiplicity="1" />
+          <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVEEDORES">
+              <PropertyRef Name="ID_PROVEEDOR" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="FK_PROVEEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FACTURAS_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="FACTURAS">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FUNCIONARIOS_PUESTOS">
+          <End Role="PUESTOS" Type="Self.PUESTOS" Multiplicity="1" />
+          <End Role="FUNCIONARIOS" Type="Self.FUNCIONARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PUESTOS">
+              <PropertyRef Name="ID_PUESTO" />
+            </Principal>
+            <Dependent Role="FUNCIONARIOS">
+              <PropertyRef Name="FK_PUESTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIOS_FUNCIONARIOS">
+          <End Role="FUNCIONARIOS" Type="Self.FUNCIONARIOS" Multiplicity="1" />
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FUNCIONARIOS">
+              <PropertyRef Name="ID_FUNCIONARIO" />
+            </Principal>
+            <Dependent Role="USUARIOS">
+              <PropertyRef Name="FK_FUNCIONARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OUTSOURCING_S_LISTAS_OUTSOURCING">
+          <End Role="LISTAS_OUTSOURCING" Type="Self.LISTAS_OUTSOURCING" Multiplicity="1" />
+          <End Role="OUTSOURCING_S" Type="Self.OUTSOURCING_S" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LISTAS_OUTSOURCING">
+              <PropertyRef Name="ID_LISTA_OUTSOURCING" />
+            </Principal>
+            <Dependent Role="OUTSOURCING_S">
+              <PropertyRef Name="FK_LISTA_OUTSOURCING" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OBRAS_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="OBRAS" Type="Self.OBRAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="OBRAS">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OUTSOURCING_S_OBRAS">
+          <End Role="OBRAS" Type="Self.OBRAS" Multiplicity="1" />
+          <End Role="OUTSOURCING_S" Type="Self.OUTSOURCING_S" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OBRAS">
+              <PropertyRef Name="ID_OBRA" />
+            </Principal>
+            <Dependent Role="OUTSOURCING_S">
+              <PropertyRef Name="FK_OBRA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OUTSOURCING_S_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="OUTSOURCING_S" Type="Self.OUTSOURCING_S" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="OUTSOURCING_S">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAGOS_X_PROVEEDORES_PROVEEDORES">
+          <End Role="PROVEEDORES" Type="Self.PROVEEDORES" Multiplicity="1" />
+          <End Role="PAGOS_X_PROVEEDORES" Type="Self.PAGOS_X_PROVEEDORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVEEDORES">
+              <PropertyRef Name="ID_PROVEEDOR" />
+            </Principal>
+            <Dependent Role="PAGOS_X_PROVEEDORES">
+              <PropertyRef Name="FK_NOMBRE_PROVEEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAGOS_X_PROVEEDORES_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="PAGOS_X_PROVEEDORES" Type="Self.PAGOS_X_PROVEEDORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="PAGOS_X_PROVEEDORES">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UBICACION_EXPEDIENTES_USUARIOS">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="UBICACION_EXPEDIENTES" Type="Self.UBICACION_EXPEDIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="ID_USUARIO" />
+            </Principal>
+            <Dependent Role="UBICACION_EXPEDIENTES">
+              <PropertyRef Name="FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SADDEXEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CATEGORIA_BONOS" EntityType="Self.CATEGORIA_BONOS" />
+          <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" />
+          <EntitySet Name="ESTADO_TRAMITES" EntityType="Self.ESTADO_TRAMITES" />
+          <EntitySet Name="EXPEDIENTES_DIGITALES" EntityType="Self.EXPEDIENTES_DIGITALES" />
+          <EntitySet Name="FACTURAS" EntityType="Self.FACTURAS" />
+          <EntitySet Name="FUNCIONARIOS" EntityType="Self.FUNCIONARIOS" />
+          <EntitySet Name="LISTAS_OUTSOURCING" EntityType="Self.LISTAS_OUTSOURCING" />
+          <EntitySet Name="OBRAS" EntityType="Self.OBRAS" />
+          <EntitySet Name="OUTSOURCING_S" EntityType="Self.OUTSOURCING_S" />
+          <EntitySet Name="PAGOS_X_PROVEEDORES" EntityType="Self.PAGOS_X_PROVEEDORES" />
+          <EntitySet Name="PROVEEDORES" EntityType="Self.PROVEEDORES" />
+          <EntitySet Name="PUESTOS" EntityType="Self.PUESTOS" />
+          <EntitySet Name="REQUISITOS_INICIALES" EntityType="Self.REQUISITOS_INICIALES" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TIPO_BONOS" EntityType="Self.TIPO_BONOS" />
+          <EntitySet Name="UBICACION_EXPEDIENTES" EntityType="Self.UBICACION_EXPEDIENTES" />
+          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" />
+          <AssociationSet Name="FK_CATEGORIA_BONOS_CLIENTES" Association="Self.FK_CATEGORIA_BONOS_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="CATEGORIA_BONOS" EntitySet="CATEGORIA_BONOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_CATEGORIA_BONOS" Association="Self.FK_EXPEDIENTES_DIGITALES_CATEGORIA_BONOS">
+            <End Role="CATEGORIA_BONOS" EntitySet="CATEGORIA_BONOS" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_CLIENTES" Association="Self.FK_EXPEDIENTES_DIGITALES_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURAS_CLIENTES" Association="Self.FK_FACTURAS_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OBRAS_CLIENTES" Association="Self.FK_OBRAS_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="OBRAS" EntitySet="OBRAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REQUISITOS_INICIALES_CLIENTES" Association="Self.FK_REQUISITOS_INICIALES_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="REQUISITOS_INICIALES" EntitySet="REQUISITOS_INICIALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIPO_BONOS_CLIENTES" Association="Self.FK_TIPO_BONOS_CLIENTES">
+            <End Role="CLIENTES" EntitySet="CLIENTES" />
+            <End Role="TIPO_BONOS" EntitySet="TIPO_BONOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_ESTADO_TRAMITES" Association="Self.FK_EXPEDIENTES_DIGITALES_ESTADO_TRAMITES">
+            <End Role="ESTADO_TRAMITES" EntitySet="ESTADO_TRAMITES" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_OBRAS" Association="Self.FK_EXPEDIENTES_DIGITALES_OBRAS">
+            <End Role="OBRAS" EntitySet="OBRAS" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_REQUISITOS_INICIALES" Association="Self.FK_EXPEDIENTES_DIGITALES_REQUISITOS_INICIALES">
+            <End Role="REQUISITOS_INICIALES" EntitySet="REQUISITOS_INICIALES" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EXPEDIENTES_DIGITALES_USUARIOS" Association="Self.FK_EXPEDIENTES_DIGITALES_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UBICACION_EXPEDIENTES_EXPEDIENTES_DIGITALES" Association="Self.FK_UBICACION_EXPEDIENTES_EXPEDIENTES_DIGITALES">
+            <End Role="EXPEDIENTES_DIGITALES" EntitySet="EXPEDIENTES_DIGITALES" />
+            <End Role="UBICACION_EXPEDIENTES" EntitySet="UBICACION_EXPEDIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURAS_OUTSOURCING_S" Association="Self.FK_FACTURAS_OUTSOURCING_S">
+            <End Role="OUTSOURCING_S" EntitySet="OUTSOURCING_S" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURAS_PROVEEDORES" Association="Self.FK_FACTURAS_PROVEEDORES">
+            <End Role="PROVEEDORES" EntitySet="PROVEEDORES" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FACTURAS_USUARIOS" Association="Self.FK_FACTURAS_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="FACTURAS" EntitySet="FACTURAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FUNCIONARIOS_PUESTOS" Association="Self.FK_FUNCIONARIOS_PUESTOS">
+            <End Role="PUESTOS" EntitySet="PUESTOS" />
+            <End Role="FUNCIONARIOS" EntitySet="FUNCIONARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIOS_FUNCIONARIOS" Association="Self.FK_USUARIOS_FUNCIONARIOS">
+            <End Role="FUNCIONARIOS" EntitySet="FUNCIONARIOS" />
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OUTSOURCING_S_LISTAS_OUTSOURCING" Association="Self.FK_OUTSOURCING_S_LISTAS_OUTSOURCING">
+            <End Role="LISTAS_OUTSOURCING" EntitySet="LISTAS_OUTSOURCING" />
+            <End Role="OUTSOURCING_S" EntitySet="OUTSOURCING_S" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OBRAS_USUARIOS" Association="Self.FK_OBRAS_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="OBRAS" EntitySet="OBRAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OUTSOURCING_S_OBRAS" Association="Self.FK_OUTSOURCING_S_OBRAS">
+            <End Role="OBRAS" EntitySet="OBRAS" />
+            <End Role="OUTSOURCING_S" EntitySet="OUTSOURCING_S" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OUTSOURCING_S_USUARIOS" Association="Self.FK_OUTSOURCING_S_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="OUTSOURCING_S" EntitySet="OUTSOURCING_S" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAGOS_X_PROVEEDORES_PROVEEDORES" Association="Self.FK_PAGOS_X_PROVEEDORES_PROVEEDORES">
+            <End Role="PROVEEDORES" EntitySet="PROVEEDORES" />
+            <End Role="PAGOS_X_PROVEEDORES" EntitySet="PAGOS_X_PROVEEDORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAGOS_X_PROVEEDORES_USUARIOS" Association="Self.FK_PAGOS_X_PROVEEDORES_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="PAGOS_X_PROVEEDORES" EntitySet="PAGOS_X_PROVEEDORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UBICACION_EXPEDIENTES_USUARIOS" Association="Self.FK_UBICACION_EXPEDIENTES_USUARIOS">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="UBICACION_EXPEDIENTES" EntitySet="UBICACION_EXPEDIENTES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SADDEXModelStoreContainer" CdmEntityContainer="SADDEXEntities">
+          <EntitySetMapping Name="CATEGORIA_BONOS">
+            <EntityTypeMapping TypeName="SADDEXModel.CATEGORIA_BONOS">
+              <MappingFragment StoreEntitySet="CATEGORIA_BONOS">
+                <ScalarProperty Name="ID_CATEGORIA_BONO" ColumnName="ID_CATEGORIA_BONO" />
+                <ScalarProperty Name="NOBRE_CATEGORIA_BONO" ColumnName="NOBRE_CATEGORIA_BONO" />
+                <ScalarProperty Name="DETALLE_CATEGORIA_BNO" ColumnName="DETALLE_CATEGORIA_BNO" />
+                <ScalarProperty Name="FK_CLIENTE" ColumnName="FK_CLIENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTES">
+            <EntityTypeMapping TypeName="SADDEXModel.CLIENTES">
+              <MappingFragment StoreEntitySet="CLIENTES">
+                <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="NOMBRE_COMPLETO" ColumnName="NOMBRE_COMPLETO" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="CANTON" ColumnName="CANTON" />
+                <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
+                <ScalarProperty Name="OTRAS_SEÑAS" ColumnName="OTRAS_SEÑAS" />
+                <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
+                <ScalarProperty Name="NACIONALIDAD" ColumnName="NACIONALIDAD" />
+                <ScalarProperty Name="TELEFONO_1" ColumnName="TELEFONO_1" />
+                <ScalarProperty Name="TELEFONO_2" ColumnName="TELEFONO_2" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESTADO_TRAMITES">
+            <EntityTypeMapping TypeName="SADDEXModel.ESTADO_TRAMITES">
+              <MappingFragment StoreEntitySet="ESTADO_TRAMITES">
+                <ScalarProperty Name="ID_ESTADO_TRAMITE" ColumnName="ID_ESTADO_TRAMITE" />
+                <ScalarProperty Name="ESTADO_DOCUMENTO_PERITO" ColumnName="ESTADO_DOCUMENTO_PERITO" />
+                <ScalarProperty Name="ESTADO_SOLICITUD" ColumnName="ESTADO_SOLICITUD" />
+                <ScalarProperty Name="ESTADO_PERMISO_CONSTRUCCION" ColumnName="ESTADO_PERMISO_CONSTRUCCION" />
+                <ScalarProperty Name="ESTADO_ARQUITECTURA" ColumnName="ESTADO_ARQUITECTURA" />
+                <ScalarProperty Name="ESTADO_BANHVI" ColumnName="ESTADO_BANHVI" />
+                <ScalarProperty Name="ESTADO_MUCAP" ColumnName="ESTADO_MUCAP" />
+                <ScalarProperty Name="DIS" ColumnName="DIS" />
+                <ScalarProperty Name="DESEMBOLSOS" ColumnName="DESEMBOLSOS" />
+                <ScalarProperty Name="CASOS_FORMALIZADOS" ColumnName="CASOS_FORMALIZADOS" />
+                <ScalarProperty Name="APC" ColumnName="APC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EXPEDIENTES_DIGITALES">
+            <EntityTypeMapping TypeName="SADDEXModel.EXPEDIENTES_DIGITALES">
+              <MappingFragment StoreEntitySet="EXPEDIENTES_DIGITALES">
+                <ScalarProperty Name="ID_EXPEDIENTE_DIGITAL" ColumnName="ID_EXPEDIENTE_DIGITAL" />
+                <ScalarProperty Name="FK_CATEGORIA_BONO" ColumnName="FK_CATEGORIA_BONO" />
+                <ScalarProperty Name="NOMBRE_EXPEDIENTE" ColumnName="NOMBRE_EXPEDIENTE" />
+                <ScalarProperty Name="FK_OBRA" ColumnName="FK_OBRA" />
+                <ScalarProperty Name="FK_USUARIO" ColumnName="FK_USUARIO" />
+                <ScalarProperty Name="FK_CLIENTE" ColumnName="FK_CLIENTE" />
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+                <ScalarProperty Name="FK_ESTADO_TRAMITE" ColumnName="FK_ESTADO_TRAMITE" />
+                <ScalarProperty Name="FK_REQUISITOS_INICIALES" ColumnName="FK_REQUISITOS_INICIALES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACTURAS">
+            <EntityTypeMapping TypeName="SADDEXModel.FACTURAS">
+              <MappingFragment StoreEntitySet="FACTURAS">
+                <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+                <ScalarProperty Name="FK_CLIENTE" ColumnName="FK_CLIENTE" />
+                <ScalarProperty Name="FK_PROVEEDOR" ColumnName="FK_PROVEEDOR" />
+                <ScalarProperty Name="FK_OUTSOURCING" ColumnName="FK_OUTSOURCING" />
+                <ScalarProperty Name="FK_USUARIO" ColumnName="FK_USUARIO" />
+                <ScalarProperty Name="SUB_TOTAL" ColumnName="SUB_TOTAL" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+                <ScalarProperty Name="IMPUESTOS" ColumnName="IMPUESTOS" />
+                <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+                <ScalarProperty Name="CONCEPTO" ColumnName="CONCEPTO" />
+                <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FUNCIONARIOS">
+            <EntityTypeMapping TypeName="SADDEXModel.FUNCIONARIOS">
+              <MappingFragment StoreEntitySet="FUNCIONARIOS">
+                <ScalarProperty Name="ID_FUNCIONARIO" ColumnName="ID_FUNCIONARIO" />
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="NOMBRE_COMPLETO" ColumnName="NOMBRE_COMPLETO" />
+                <ScalarProperty Name="PRIMER_APELLIDO" ColumnName="PRIMER_APELLIDO" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO" ColumnName="SEGUNDO_APELLIDO" />
+                <ScalarProperty Name="FK_PUESTO" ColumnName="FK_PUESTO" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="CANTON" ColumnName="CANTON" />
+                <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
+                <ScalarProperty Name="OTRAS_SEÑAS" ColumnName="OTRAS_SEÑAS" />
+                <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
+                <ScalarProperty Name="NACIONALIDAD" ColumnName="NACIONALIDAD" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="FECHA_INGRESO" ColumnName="FECHA_INGRESO" />
+                <ScalarProperty Name="TELEFONO_1" ColumnName="TELEFONO_1" />
+                <ScalarProperty Name="TELEFONO_2" ColumnName="TELEFONO_2" />
+                <ScalarProperty Name="FECHA_CESANTIA" ColumnName="FECHA_CESANTIA" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LISTAS_OUTSOURCING">
+            <EntityTypeMapping TypeName="SADDEXModel.LISTAS_OUTSOURCING">
+              <MappingFragment StoreEntitySet="LISTAS_OUTSOURCING">
+                <ScalarProperty Name="ID_LISTA_OUTSOURCING" ColumnName="ID_LISTA_OUTSOURCING" />
+                <ScalarProperty Name="NOMBRE_SERVICIO" ColumnName="NOMBRE_SERVICIO" />
+                <ScalarProperty Name="SALARIO" ColumnName="SALARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBRAS">
+            <EntityTypeMapping TypeName="SADDEXModel.OBRAS">
+              <MappingFragment StoreEntitySet="OBRAS">
+                <ScalarProperty Name="ID_OBRA" ColumnName="ID_OBRA" />
+                <ScalarProperty Name="FK_USUARIO" ColumnName="FK_USUARIO" />
+                <ScalarProperty Name="LUGAR_OBRA" ColumnName="LUGAR_OBRA" />
+                <ScalarProperty Name="FECHA_INICIO_OBRA" ColumnName="FECHA_INICIO_OBRA" />
+                <ScalarProperty Name="FECHA_FINAL_OBRA" ColumnName="FECHA_FINAL_OBRA" />
+                <ScalarProperty Name="COSTO_OBRA" ColumnName="COSTO_OBRA" />
+                <ScalarProperty Name="FK_CLIENTE" ColumnName="FK_CLIENTE" />
+                <ScalarProperty Name="DETALLE_OBRA" ColumnName="DETALLE_OBRA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OUTSOURCING_S">
+            <EntityTypeMapping TypeName="SADDEXModel.OUTSOURCING_S">
+              <MappingFragment StoreEntitySet="OUTSOURCING_S">
+                <ScalarProperty Name="ID_OUTSOURCING" ColumnName="ID_OUTSOURCING" />
+                <ScalarProperty Name="FK_USUARIO" ColumnName="FK_USUARIO" />
+                <ScalarProperty Name="FK_LISTA_OUTSOURCING" ColumnName="FK_LISTA_OUTSOURCING" />
+                <ScalarProperty Name="FK_OBRA" ColumnName="FK_OBRA" />
+                <ScalarProperty Name="FECHA_CONTRATACION" ColumnName="FECHA_CONTRATACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAGOS_X_PROVEEDORES">
+            <EntityTypeMapping TypeName="SADDEXModel.PAGOS_X_PROVEEDORES">
+              <MappingFragment StoreEntitySet="PAGOS_X_PROVEEDORES">
+                <ScalarProperty Name="ID_PAGO_X_PROVEEDOR" ColumnName="ID_PAGO_X_PROVEEDOR" />
+                <ScalarProperty Name="FK_NOMBRE_PROVEEDOR" ColumnName="FK_NOMBRE_PROVEEDOR" />
+                <ScalarProperty Name="MONTO_CHEQUE" ColumnName="MONTO_CHEQUE" />
+                <ScalarProperty Name="FECHA_CHEQUE" ColumnName="FECHA_CHEQUE" />
+                <ScalarProperty Name="NUMERO_CHEQUE" ColumnName="NUMERO_CHEQUE" />
+                <ScalarProperty Name="FK_USUARIO" ColumnName="FK_USUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROVEEDORES">
+            <EntityTypeMapping TypeName="SADDEXModel.PROVEEDORES">
+              <MappingFragment StoreEntitySet="PROVEEDORES">
+                <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
+                <ScalarProperty Name="NOMBRE_PROVEEDOR" ColumnName="NOMBRE_PROVEEDOR" />
+                <ScalarProperty Name="UBICACION" ColumnName="UBICACION" />
+                <ScalarProperty Name="TELEFONO_1" ColumnName="TELEFONO_1" />
+                <ScalarProperty Name="TELEFONO_2" ColumnName="TELEFONO_2" />
+                <ScalarProperty Name="CEDULA_JURIDICA" ColumnName="CEDULA_JURIDICA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PUESTOS">
+            <EntityTypeMapping TypeName="SADDEXModel.PUESTOS">
+              <MappingFragment StoreEntitySet="PUESTOS">
+                <ScalarProperty Name="ID_PUESTO" ColumnName="ID_PUESTO" />
+                <ScalarProperty Name="NOMBRE_PUESTO" ColumnName="NOMBRE_PUESTO" />
+                <ScalarProperty Name="DETALLE_PUESTO" ColumnName="DETALLE_PUESTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REQUISITOS_INICIALES">
+            <EntityTypeMapping TypeName="SADDEXModel.REQUISITOS_INICIALES">
+              <MappingFragment StoreEntitySet="REQUISITOS_INICIALES">
+                <ScalarProperty Name="ID_REQUISITO" ColumnName="ID_REQUISITO" />
+                <ScalarProperty Name="COPIA_CEDULA" ColumnName="COPIA_CEDULA" />
+                <ScalarProperty Name="PROPIEDADES" ColumnName="PROPIEDADES" />
+                <ScalarProperty Name="COPIA_RECIBOS_SERVICIOS_PUBLICOS" ColumnName="COPIA_RECIBOS_SERVICIOS_PUBLICOS" />
+                <ScalarProperty Name="BONOS_ANTERIORES" ColumnName="BONOS_ANTERIORES" />
+                <ScalarProperty Name="CERTIFICACION_IMPUESTOS" ColumnName="CERTIFICACION_IMPUESTOS" />
+                <ScalarProperty Name="EXAMEN_POZO" ColumnName="EXAMEN_POZO" />
+                <ScalarProperty Name="CERTIFICACION_ESTADO_CIVIL" ColumnName="CERTIFICACION_ESTADO_CIVIL" />
+                <ScalarProperty Name="TERRENO_LOTE" ColumnName="TERRENO_LOTE" />
+                <ScalarProperty Name="REPORTE_SICERE" ColumnName="REPORTE_SICERE" />
+                <ScalarProperty Name="CONSTANCIA_CONTADOR" ColumnName="CONSTANCIA_CONTADOR" />
+                <ScalarProperty Name="CONSTANCIA_SALARIO" ColumnName="CONSTANCIA_SALARIO" />
+                <ScalarProperty Name="ASADA" ColumnName="ASADA" />
+                <ScalarProperty Name="FK_CLIENTE" ColumnName="FK_CLIENTE" />
+                <ScalarProperty Name="PLANO_CATASTRO" ColumnName="PLANO_CATASTRO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SADDEXModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_BONOS">
+            <EntityTypeMapping TypeName="SADDEXModel.TIPO_BONOS">
+              <MappingFragment StoreEntitySet="TIPO_BONOS">
+                <ScalarProperty Name="ID_TIPO_BONO" ColumnName="ID_TIPO_BONO" />
+                <ScalarProperty Name="NOMBRE_TIPO_BONO" ColumnName="NOMBRE_TIPO_BONO" />
+                <ScalarProperty Name="DETALLE_TIPO_BONO" ColumnName="DETALLE_TIPO_BONO" />
+                <ScalarProperty Name="FK_CLIENTE" ColumnName="FK_CLIENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UBICACION_EXPEDIENTES">
+            <EntityTypeMapping TypeName="SADDEXModel.UBICACION_EXPEDIENTES">
+              <MappingFragment StoreEntitySet="UBICACION_EXPEDIENTES">
+                <ScalarProperty Name="ID_UBICACION_EXPEIENTE" ColumnName="ID_UBICACION_EXPEIENTE" />
+                <ScalarProperty Name="NOMBRE_UBICACION" ColumnName="NOMBRE_UBICACION" />
+                <ScalarProperty Name="FK_USUARIO" ColumnName="FK_USUARIO" />
+                <ScalarProperty Name="DETALLE_UBICACION" ColumnName="DETALLE_UBICACION" />
+                <ScalarProperty Name="FK_EXPEDIENTE" ColumnName="FK_EXPEDIENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOS">
+            <EntityTypeMapping TypeName="SADDEXModel.USUARIOS">
+              <MappingFragment StoreEntitySet="USUARIOS">
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+                <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
+                <ScalarProperty Name="FK_FUNCIONARIO" ColumnName="FK_FUNCIONARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
