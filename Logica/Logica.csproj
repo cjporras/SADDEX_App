@@ -49,6 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementaciones\CategoriaBonoLN.cs" />
+    <Compile Include="Implementaciones\ClienteLN.cs" />
+    <Compile Include="Implementaciones\EstadoTramiteLN.cs" />
+    <Compile Include="Implementaciones\ExpedienteDigitalLN.cs" />
+    <Compile Include="Implementaciones\FacturaLN.cs" />
+    <Compile Include="Implementaciones\FuncionarioLN.cs" />
+    <Compile Include="Implementaciones\ListaOutsourcingLN.cs" />
+    <Compile Include="Implementaciones\ObraLN.cs" />
+    <Compile Include="Implementaciones\OutsourcingLN.cs" />
+    <Compile Include="Implementaciones\PagoProveedorLN.cs" />
+    <Compile Include="Implementaciones\ProveedorLN.cs" />
+    <Compile Include="Implementaciones\PuestoLN.cs" />
+    <Compile Include="Implementaciones\RequisitoInicialLN.cs" />
+    <Compile Include="Implementaciones\TipoBonoLN.cs" />
+    <Compile Include="Implementaciones\UbicacionExpedienteLN.cs" />
+    <Compile Include="Implementaciones\UsuarioLN.cs" />
     <Compile Include="Interface\clsInterfaceLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,9 +82,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Implementaciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

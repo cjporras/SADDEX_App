@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Interfaz
+namespace SADDEX
 {
-    public partial class Form1 : Form
+    public partial class frmProveedores : Form
     {
-        public Form1()
+        public frmProveedores()
         {
             InitializeComponent();
         }

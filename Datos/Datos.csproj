@@ -51,6 +51,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementaciones\CategoriaBonoAD.cs" />
+    <Compile Include="Implementaciones\ClienteAD.cs" />
+    <Compile Include="Implementaciones\EstadoTramiteAD.cs" />
+    <Compile Include="Implementaciones\ExpedienteDigitalAD.cs" />
+    <Compile Include="Implementaciones\FacturaAD.cs" />
+    <Compile Include="Implementaciones\FuncionarioAD.cs" />
+    <Compile Include="Implementaciones\ListaOutsourcingAD.cs" />
+    <Compile Include="Implementaciones\ObraAD.cs" />
+    <Compile Include="Implementaciones\OutsourcingAD.cs" />
+    <Compile Include="Implementaciones\PagoPorProveedorAD.cs" />
+    <Compile Include="Implementaciones\ProveedorAD.cs" />
+    <Compile Include="Implementaciones\PuestoAD.cs" />
+    <Compile Include="Implementaciones\RequisitoInicialAD.cs" />
+    <Compile Include="Implementaciones\TipoBonoAD.cs" />
+    <Compile Include="Implementaciones\UbicacionExpedienteAD.cs" />
+    <Compile Include="Implementaciones\UsuarioAD.cs" />
     <Compile Include="Interface\clsInterfaceDatos.cs" />
     <Compile Include="Modelo_db_SADDEX.Context.cs">
       <DependentUpon>Modelo_db_SADDEX.Context.tt</DependentUpon>
@@ -91,9 +107,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Implementaciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
