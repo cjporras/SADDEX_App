@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
-  public  class ObraAD
+  public  class ObraAD : clsInterfaceDatos<OBRAS>
     {
         SADDEXEntities context;
 
@@ -17,12 +17,12 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(OBRAS obj)
+        public void Agregar_D(OBRAS obj)
         {
             this.context.OBRAS.Add(obj);
         }
 
-        public void EliminarAD(OBRAS obj)
+        public void Eliminar_D(OBRAS obj)
         {
             var obra = context.OBRAS.Where(com => com.ID_OBRA == obj.ID_OBRA).FirstOrDefault();
             if (obra != null)
@@ -31,7 +31,7 @@ namespace Datos.Implementaciones
             }
         }
 
-        public void ModificarAD(OBRAS obj)
+        public void Modificar_D(OBRAS obj)
         {
             var obra = context.OBRAS.Where(com => com.ID_OBRA == obj.ID_OBRA).FirstOrDefault();
             if (obra != null)
@@ -46,12 +46,12 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<OBRAS> obtenerListaAD()
+        public IEnumerable<OBRAS> devolverLISTA_D()
         {
             return this.context.OBRAS;
         }
 
-        public OBRAS obtenerPorID_AD(int id)
+        public OBRAS buscarporID(int id)
         {
             return this.context.OBRAS.Where(com => com.ID_OBRA == id).FirstOrDefault();
         }

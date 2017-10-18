@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class FacturaLN
+    class FacturaLN : clsInterfaceLogica<FACTURAS>
     {
         SADDEXEntities context;
         FacturaAD FacturaAD;
@@ -21,12 +21,12 @@ namespace Logica.Implementaciones
             FacturaAD = new FacturaAD(context);
         }
 
-        public void AgregarAD(FACTURAS obj)
+        public void Agregar_L(FACTURAS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                FacturaAD.AgregarAD(obj);
+                FacturaAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -36,12 +36,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(FACTURAS obj)
+        public void Eliminar_L(FACTURAS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                FacturaAD.EliminarAD(obj);
+                FacturaAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -51,12 +51,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(FACTURAS obj)
+        public void Modificar_L(FACTURAS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                FacturaAD.ModificarAD(obj);
+                FacturaAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -66,14 +66,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<FACTURAS> obtenerListaAD()
+        public IEnumerable<FACTURAS> devolverLISTA_L()
         {
-            return FacturaAD.obtenerListaAD();
+            return FacturaAD.devolverLISTA_D();
         }
 
-        public FACTURAS obtenerPorID_AD(int id)
+        public FACTURAS buscarporID_L(int id)
         {
-            return FacturaAD.obtenerPorID_AD(id);
+            return FacturaAD.buscarporID(id);
         }
     }
 }

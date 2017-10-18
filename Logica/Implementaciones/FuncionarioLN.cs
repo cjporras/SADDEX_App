@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class FuncionarioLN
+    class FuncionarioLN: clsInterfaceLogica<FUNCIONARIOS>
     {
         SADDEXEntities context;
         FuncionarioAD FuncionarioAD;
@@ -22,12 +22,12 @@ namespace Logica.Implementaciones
         }
 
 
-        public void AgregarAD(FUNCIONARIOS obj)
+        public void Agregar_L(FUNCIONARIOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                FuncionarioAD.AgregarAD(obj);
+                FuncionarioAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -37,12 +37,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(FUNCIONARIOS obj)
+        public void Eliminar_L(FUNCIONARIOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                FuncionarioAD.EliminarAD(obj);
+                FuncionarioAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -52,12 +52,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(FUNCIONARIOS obj)
+        public void Modificar_L(FUNCIONARIOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                FuncionarioAD.ModificarAD(obj);
+                FuncionarioAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -67,14 +67,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<FUNCIONARIOS> obtenerListaAD()
+        public IEnumerable<FUNCIONARIOS> devolverLISTA_L()
         {
-            return FuncionarioAD.obtenerListaAD();
+            return FuncionarioAD.devolverLISTA_D();
         }
 
-        public FUNCIONARIOS obtenerPorID_AD(int id)
+        public FUNCIONARIOS buscarporID_L(int id)
         {
-            return FuncionarioAD.obtenerPorID_AD(id);
+            return FuncionarioAD.buscarporID(id);
         }
     }
 }

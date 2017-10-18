@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
-  public  class OutsourcingAD
+  public  class OutsourcingAD : clsInterfaceDatos<OUTSOURCING_S>
     {
         SADDEXEntities context;
 
@@ -17,12 +17,12 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(OUTSOURCING_S obj)
+        public void Agregar_D(OUTSOURCING_S obj)
         {
             this.context.OUTSOURCING_S.Add(obj);
         }
 
-        public void EliminarAD(OUTSOURCING_S obj)
+        public void Eliminar_D(OUTSOURCING_S obj)
         {
             var outsourcing = context.OUTSOURCING_S.Where(com => com.ID_OUTSOURCING == obj.ID_OUTSOURCING).FirstOrDefault();
             if (outsourcing != null)
@@ -31,7 +31,7 @@ namespace Datos.Implementaciones
             }
         }
 
-        public void ModificarAD(OUTSOURCING_S obj)
+        public void Modificar_D(OUTSOURCING_S obj)
         {
             var outsourcing = context.OUTSOURCING_S.Where(com => com.ID_OUTSOURCING == obj.ID_OUTSOURCING).FirstOrDefault();
             if (outsourcing != null)
@@ -43,12 +43,12 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<OUTSOURCING_S> obtenerListaAD()
+        public IEnumerable<OUTSOURCING_S> devolverLISTA_D()
         {
             return this.context.OUTSOURCING_S;
         }
 
-        public OUTSOURCING_S obtenerPorID_AD(int id)
+        public OUTSOURCING_S buscarporID(int id)
         {
             return this.context.OUTSOURCING_S.Where(com => com.ID_OUTSOURCING == id).FirstOrDefault();
         }

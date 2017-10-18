@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class ClienteLN
+    class ClienteLN : clsInterfaceLogica<CLIENTES>
     {
         SADDEXEntities context;
         ClienteAD ClienteAD;
@@ -21,12 +21,12 @@ namespace Logica.Implementaciones
             ClienteAD = new ClienteAD(context);
         }
 
-        public void AgregarAD(CLIENTES obj)
+        public void Agregar_L(CLIENTES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ClienteAD.AgregarAD(obj);
+                ClienteAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -36,12 +36,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(CLIENTES obj)
+        public void Eliminar_L(CLIENTES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ClienteAD.EliminarAD(obj);
+                ClienteAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -51,12 +51,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(CLIENTES obj)
+        public void Modificar_L(CLIENTES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ClienteAD.ModificarAD(obj);
+                ClienteAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -66,14 +66,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<CLIENTES> obtenerListaAD()
+        public IEnumerable<CLIENTES> devolverLISTA_L()
         {
-            return ClienteAD.obtenerListaAD();
+            return ClienteAD.devolverLISTA_D();
         }
 
-        public CLIENTES obtenerPorID_AD(int id)
+        public CLIENTES buscarporID_L(int id)
         {
-            return ClienteAD.obtenerPorID_AD(id);
+            return ClienteAD.buscarporID(id);
         }
     }
 }

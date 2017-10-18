@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
- public  class FacturaAD
+ public  class FacturaAD : clsInterfaceDatos<FACTURAS>
     {
         SADDEXEntities context;
 
@@ -17,12 +17,12 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(FACTURAS obj)
+        public void Agregar_D(FACTURAS obj)
         {
             this.context.FACTURAS.Add(obj);
         }
 
-        public void EliminarAD(FACTURAS obj)
+        public void Eliminar_D(FACTURAS obj)
         {
             var factura = context.FACTURAS.Where(com => com.ID_FACTURA == obj.ID_FACTURA).FirstOrDefault();
             if (factura != null)
@@ -31,7 +31,7 @@ namespace Datos.Implementaciones
             }
         }
 
-        public void ModificarAD(FACTURAS obj)
+        public void Modificar_D(FACTURAS obj)
         {
             var factura = context.FACTURAS.Where(com => com.ID_FACTURA == obj.ID_FACTURA).FirstOrDefault();
             if (factura != null)
@@ -49,12 +49,12 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<FACTURAS> obtenerListaAD()
+        public IEnumerable<FACTURAS> devolverLISTA_D()
         {
             return this.context.FACTURAS;
         }
 
-        public FACTURAS obtenerPorID_AD(int id)
+        public FACTURAS buscarporID(int id)
         {
             return this.context.FACTURAS.Where(com => com.ID_FACTURA == id).FirstOrDefault();
         }

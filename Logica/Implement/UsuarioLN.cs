@@ -3,31 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entidades;
 using Datos.Implementaciones;
 using Datos;
-using Logica.Interface;
+using Entidades;
 
-namespace Logica.Implementaciones
+namespace Logica.Implement
 {
-    class CategoriaBonoLN : clsInterfaceLogica<CATEGORIA_BONOS>
+    class UsuarioLN
     {
         SADDEXEntities context;
-        CategoriaBonoAD CategoriaBonoAD;
+        UsuarioAD UsuarioAD;
 
-        public CategoriaBonoLN()
+        public UsuarioLN()
         {
             context = new SADDEXEntities();
-            CategoriaBonoAD = new CategoriaBonoAD(context);
+            UsuarioAD = new UsuarioAD(context);
         }
 
-
-        public void Agregar_L(CATEGORIA_BONOS obj)
+        public void AgregarAD(USUARIOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                CategoriaBonoAD.Agregar_D(obj);
+                UsuarioAD.AgregarAD(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -37,12 +35,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void Eliminar_L( CATEGORIA_BONOS obj)
+        public void EliminarAD(USUARIOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                CategoriaBonoAD.Eliminar_D(obj);
+                UsuarioAD.EliminarAD(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -52,12 +50,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void Modificar_L(CATEGORIA_BONOS obj)
+        public void ModificarAD(USUARIOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                CategoriaBonoAD.Modificar_D(obj);
+                UsuarioAD.ModificarAD(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -67,14 +65,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<CATEGORIA_BONOS> devolverLISTA_L()
+        public IEnumerable<USUARIOS> obtenerListaAD()
         {
-            return CategoriaBonoAD.devolverLISTA_D();
+            return UsuarioAD.obtenerListaAD();
         }
 
-        public CATEGORIA_BONOS buscarporID_L(int id)
+        public USUARIOS obtenerPorID_AD(int id)
         {
-            return CategoriaBonoAD.buscarporID(id);
+            return UsuarioAD.obtenerPorID_AD(id);
         }
     }
 }

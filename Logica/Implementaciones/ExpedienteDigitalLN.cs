@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class ExpedienteDigitalLN
+    class ExpedienteDigitalLN : clsInterfaceLogica<EXPEDIENTES_DIGITALES>
     {
         SADDEXEntities context;
         ExpedienteDigitalAD ExpedienteDigitalAD;
@@ -22,12 +22,12 @@ namespace Logica.Implementaciones
         }
 
 
-        public void AgregarAD(EXPEDIENTES_DIGITALES obj)
+        public void Agregar_L(EXPEDIENTES_DIGITALES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ExpedienteDigitalAD.AgregarAD(obj);
+                ExpedienteDigitalAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -37,12 +37,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(EXPEDIENTES_DIGITALES obj)
+        public void Eliminar_L(EXPEDIENTES_DIGITALES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ExpedienteDigitalAD.EliminarAD(obj);
+                ExpedienteDigitalAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -52,12 +52,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(EXPEDIENTES_DIGITALES obj)
+        public void Modificar_L(EXPEDIENTES_DIGITALES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ExpedienteDigitalAD.ModificarAD(obj);
+                ExpedienteDigitalAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -67,14 +67,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<EXPEDIENTES_DIGITALES> obtenerListaAD()
+        public IEnumerable<EXPEDIENTES_DIGITALES> devolverLISTA_L()
         {
-            return ExpedienteDigitalAD.obtenerListaAD();
+            return ExpedienteDigitalAD.devolverLISTA_D();
         }
 
-        public EXPEDIENTES_DIGITALES obtenerPorID_AD(int id)
+        public EXPEDIENTES_DIGITALES buscarporID_L(int id)
         {
-            return ExpedienteDigitalAD.obtenerPorID_AD(id);
+            return ExpedienteDigitalAD.buscarporID(id);
         }
     }
 }

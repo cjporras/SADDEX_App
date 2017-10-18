@@ -65,6 +65,7 @@
     <Compile Include="Implementaciones\TipoBonoLN.cs" />
     <Compile Include="Implementaciones\UbicacionExpedienteLN.cs" />
     <Compile Include="Implementaciones\UsuarioLN.cs" />
+    <Compile Include="Implement\UsuarioLN.cs" />
     <Compile Include="Interface\clsInterfaceLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
-  public  class PagoPorProveedorAD
+  public  class PagoPorProveedorAD : clsInterfaceDatos<PAGOS_X_PROVEEDORES>
     {
         SADDEXEntities context;
 
@@ -17,12 +17,12 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(PAGOS_X_PROVEEDORES obj)
+        public void Agregar_D(PAGOS_X_PROVEEDORES obj)
         {
             this.context.PAGOS_X_PROVEEDORES.Add(obj);
         }
 
-        public void EliminarAD(PAGOS_X_PROVEEDORES obj)
+        public void Eliminar_D(PAGOS_X_PROVEEDORES obj)
         {
             var pagoProveedor = context.PAGOS_X_PROVEEDORES.Where(com => com.ID_PAGO_X_PROVEEDOR == obj.ID_PAGO_X_PROVEEDOR).FirstOrDefault();
             if (pagoProveedor != null)
@@ -31,7 +31,7 @@ namespace Datos.Implementaciones
             }
         }
 
-        public void ModificarAD(PAGOS_X_PROVEEDORES obj)
+        public void Modificar_D(PAGOS_X_PROVEEDORES obj)
         {
             var pagoProveedor = context.PAGOS_X_PROVEEDORES.Where(com => com.ID_PAGO_X_PROVEEDOR == obj.ID_PAGO_X_PROVEEDOR).FirstOrDefault();
             if (pagoProveedor != null)
@@ -44,12 +44,12 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<PAGOS_X_PROVEEDORES> obtenerListaAD()
+        public IEnumerable<PAGOS_X_PROVEEDORES> devolverLISTA_D()
         {
             return this.context.PAGOS_X_PROVEEDORES;
         }
 
-        public PAGOS_X_PROVEEDORES obtenerPorID_AD(int id)
+        public PAGOS_X_PROVEEDORES buscarporID(int id)
         {
             return this.context.PAGOS_X_PROVEEDORES.Where(com => com.ID_PAGO_X_PROVEEDOR == id).FirstOrDefault();
         }

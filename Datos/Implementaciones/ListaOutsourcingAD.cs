@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
-  public  class ListaOutsourcingAD
+  public  class ListaOutsourcingAD : clsInterfaceDatos<LISTAS_OUTSOURCING>
     {
         SADDEXEntities context;
 
@@ -17,12 +17,12 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(LISTAS_OUTSOURCING obj)
+        public void Agregar_D(LISTAS_OUTSOURCING obj)
         {
             this.context.LISTAS_OUTSOURCING.Add(obj);
         }
 
-        public void EliminarAD(LISTAS_OUTSOURCING obj)
+        public void Eliminar_D(LISTAS_OUTSOURCING obj)
         {
             var listaOutsourcing = context.LISTAS_OUTSOURCING.Where(com => com.ID_LISTA_OUTSOURCING == obj.ID_LISTA_OUTSOURCING).FirstOrDefault();
             if (listaOutsourcing != null)
@@ -31,7 +31,7 @@ namespace Datos.Implementaciones
             }
         }
 
-        public void ModificarAD(LISTAS_OUTSOURCING obj)
+        public void Modificar_D(LISTAS_OUTSOURCING obj)
         {
             var listaOutsourcing = context.LISTAS_OUTSOURCING.Where(com => com.ID_LISTA_OUTSOURCING == obj.ID_LISTA_OUTSOURCING).FirstOrDefault();
             if (listaOutsourcing != null)
@@ -41,12 +41,12 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<LISTAS_OUTSOURCING> obtenerListaAD()
+        public IEnumerable<LISTAS_OUTSOURCING> devolverLISTA_D()
         {
             return this.context.LISTAS_OUTSOURCING;
         }
 
-        public LISTAS_OUTSOURCING obtenerPorID_AD(int id)
+        public LISTAS_OUTSOURCING buscarporID(int id)
         {
             return this.context.LISTAS_OUTSOURCING.Where(com => com.ID_LISTA_OUTSOURCING == id).FirstOrDefault();
         }

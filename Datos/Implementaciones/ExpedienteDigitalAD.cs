@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
-   public class ExpedienteDigitalAD
+    public class ExpedienteDigitalAD : clsInterfaceDatos<EXPEDIENTES_DIGITALES>
     {
 
         SADDEXEntities context;
@@ -18,12 +18,12 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(EXPEDIENTES_DIGITALES obj)
+        public void Agregar_D(EXPEDIENTES_DIGITALES obj)
         {
             this.context.EXPEDIENTES_DIGITALES.Add(obj);
         }
 
-        public void EliminarAD(EXPEDIENTES_DIGITALES obj)
+        public void Eliminar_D(EXPEDIENTES_DIGITALES obj)
         {
             var expedienteDigital = context.EXPEDIENTES_DIGITALES.Where(com => com.ID_EXPEDIENTE_DIGITAL == obj.ID_EXPEDIENTE_DIGITAL).FirstOrDefault();
             if (expedienteDigital != null)
@@ -32,7 +32,7 @@ namespace Datos.Implementaciones
             }
         }
 
-        public void ModificarAD(EXPEDIENTES_DIGITALES obj)
+        public void Modificar_D(EXPEDIENTES_DIGITALES obj)
         {
             var expedienteDigital = context.EXPEDIENTES_DIGITALES.Where(com => com.ID_EXPEDIENTE_DIGITAL == obj.ID_EXPEDIENTE_DIGITAL).FirstOrDefault();
             if (expedienteDigital != null)
@@ -45,12 +45,12 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<EXPEDIENTES_DIGITALES> obtenerListaAD()
+        public IEnumerable<EXPEDIENTES_DIGITALES> devolverLISTA_D()
         {
             return this.context.EXPEDIENTES_DIGITALES;
         }
 
-        public EXPEDIENTES_DIGITALES obtenerPorID_AD(int id)
+        public EXPEDIENTES_DIGITALES buscarporID(int id)
         {
             return this.context.EXPEDIENTES_DIGITALES.Where(com => com.ID_EXPEDIENTE_DIGITAL == id).FirstOrDefault();
         }

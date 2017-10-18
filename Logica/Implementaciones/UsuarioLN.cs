@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 using Entidades;
 using Datos.Implementaciones;
 using Datos;
-using Logica.Interface;
 
-namespace Logica.Implementaciones
+    namespace Logica
 {
-    class UsuarioLN
+  public class UsuarioLN
     {
         SADDEXEntities context;
         UsuarioAD UsuarioAD;
@@ -20,7 +19,6 @@ namespace Logica.Implementaciones
             context = new SADDEXEntities();
             UsuarioAD = new UsuarioAD(context);
         }
-
 
         public void AgregarAD(USUARIOS obj)
         {

@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class ObraLN
+    class ObraLN : clsInterfaceLogica<OBRAS>
     {
         SADDEXEntities context;
         ObraAD ObraAD;
@@ -22,12 +22,12 @@ namespace Logica.Implementaciones
         }
 
 
-        public void AgregarAD(OBRAS obj)
+        public void Agregar_L(OBRAS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ObraAD.AgregarAD(obj);
+                ObraAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -37,12 +37,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(OBRAS obj)
+        public void Eliminar_L(OBRAS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ObraAD.EliminarAD(obj);
+                ObraAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -52,12 +52,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(OBRAS obj)
+        public void Modificar_L(OBRAS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ObraAD.ModificarAD(obj);
+                ObraAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -67,14 +67,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<OBRAS> obtenerListaAD()
+        public IEnumerable<OBRAS> devolverLISTA_L()
         {
-            return ObraAD.obtenerListaAD();
+            return ObraAD.devolverLISTA_D();
         }
 
-        public OBRAS obtenerPorID_AD(int id)
+        public OBRAS buscarporID_L(int id)
         {
-            return ObraAD.obtenerPorID_AD(id);
+            return ObraAD.buscarporID(id);
         }
     }
 }

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Datos.Interface;
 using Entidades;
 
 namespace Datos.Implementaciones
 {
- public   class UsuarioAD
+ public class UsuarioAD
     {
         SADDEXEntities context;
 

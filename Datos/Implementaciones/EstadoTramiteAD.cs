@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
- public   class EstadoTramiteAD
+ public   class EstadoTramiteAD : clsInterfaceDatos<ESTADO_TRAMITES>
     {
         SADDEXEntities context;
 
@@ -17,12 +17,12 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(ESTADO_TRAMITES obj)
+        public void Agregar_D(ESTADO_TRAMITES obj)
         {
             this.context.ESTADO_TRAMITES.Add(obj);
         }
 
-        public void EliminarAD(ESTADO_TRAMITES obj)
+        public void Eliminar_D(ESTADO_TRAMITES obj)
         {
             var estadoTramite = context.ESTADO_TRAMITES.Where(com => com.ID_ESTADO_TRAMITE == obj.ID_ESTADO_TRAMITE).FirstOrDefault();
             if (estadoTramite != null)
@@ -31,7 +31,7 @@ namespace Datos.Implementaciones
             }
         }
 
-        public void ModificarAD(ESTADO_TRAMITES obj)
+        public void Modificar_D(ESTADO_TRAMITES obj)
         {
             var estadoTramite = context.ESTADO_TRAMITES.Where(com => com.ID_ESTADO_TRAMITE == obj.ID_ESTADO_TRAMITE).FirstOrDefault();
             if (estadoTramite != null)
@@ -48,13 +48,13 @@ namespace Datos.Implementaciones
                 estadoTramite.APC = obj.APC;
             }
         }
-
-        public IEnumerable<ESTADO_TRAMITES> obtenerListaAD()
+    
+        public IEnumerable<ESTADO_TRAMITES> devolverLISTA_D()
         {
             return this.context.ESTADO_TRAMITES;
         }
 
-        public ESTADO_TRAMITES obtenerPorID_AD(int id)
+        public ESTADO_TRAMITES buscarporID(int id)
         {
             return this.context.ESTADO_TRAMITES.Where(com => com.ID_ESTADO_TRAMITE == id).FirstOrDefault();
         }

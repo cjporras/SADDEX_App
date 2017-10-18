@@ -27,7 +27,7 @@ namespace Logica.Implementaciones
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                OutsourcingAD.AgregarAD(obj);
+                OutsourcingAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -42,7 +42,7 @@ namespace Logica.Implementaciones
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                OutsourcingAD.EliminarAD(obj);
+                OutsourcingAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -57,7 +57,7 @@ namespace Logica.Implementaciones
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                OutsourcingAD.ModificarAD(obj);
+                OutsourcingAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }

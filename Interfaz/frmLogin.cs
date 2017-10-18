@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entidades;
-using Logica.Implementaciones;
+using Datos.Implementaciones;
 
 namespace SADDEX
 {
@@ -19,8 +18,7 @@ namespace SADDEX
             InitializeComponent();
         }
 
-        USUARIOS nombreusuario = new USUARIOS();
-
+        //USUARIOS nombreusuario = new USUARIOS();
      
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -36,8 +34,8 @@ namespace SADDEX
 
         private void button1_Click(object sender, EventArgs e)
         {
-            nombreusuario.NOMBRE_USUARIO = txtNombreUsuario.Text;
-            nombreusuario.CONTRASEÑA = txtContraseña.Text;
+            //nombreusuario.NOMBRE_USUARIO = txtNombreUsuario.Text;
+            //nombreusuario.CONTRASEÑA = txtContraseña.Text;
            
         }
     }

@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
- public  class FuncionarioAD
+ public  class FuncionarioAD : clsInterfaceDatos<FUNCIONARIOS>
     {
         SADDEXEntities context;
 
@@ -17,12 +17,12 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(FUNCIONARIOS obj)
+        public void Agregar_D(FUNCIONARIOS obj)
         {
             this.context.FUNCIONARIOS.Add(obj);
         }
 
-        public void EliminarAD(FUNCIONARIOS obj)
+        public void Eliminar_D(FUNCIONARIOS obj)
         {
             var funcionario = context.FUNCIONARIOS.Where(com => com.ID_FUNCIONARIO == obj.ID_FUNCIONARIO).FirstOrDefault();
             if (funcionario != null)
@@ -31,7 +31,7 @@ namespace Datos.Implementaciones
             }
         }
 
-        public void ModificarAD(FUNCIONARIOS obj)
+        public void Modificar_D(FUNCIONARIOS obj)
         {
             var funcionario = context.FUNCIONARIOS.Where(com => com.ID_FUNCIONARIO == obj.ID_FUNCIONARIO).FirstOrDefault();
             if (funcionario != null)
@@ -54,12 +54,12 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<FUNCIONARIOS> obtenerListaAD()
+        public IEnumerable<FUNCIONARIOS> devolverLISTA_D()
         {
             return this.context.FUNCIONARIOS;
         }
 
-        public FUNCIONARIOS obtenerPorID_AD(int id)
+        public FUNCIONARIOS buscarporID(int id)
         {
             return this.context.FUNCIONARIOS.Where(com => com.ID_FUNCIONARIO == id).FirstOrDefault();
         }

@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class ListaOutsourcingLN
+    class ListaOutsourcingLN : clsInterfaceLogica<LISTAS_OUTSOURCING>
     {
         SADDEXEntities context;
         ListaOutsourcingAD ListaOutsourcingAD;
@@ -21,12 +21,12 @@ namespace Logica.Implementaciones
             ListaOutsourcingAD = new ListaOutsourcingAD(context);
         }
 
-        public void AgregarAD(LISTAS_OUTSOURCING obj)
+        public void Agregar_L(LISTAS_OUTSOURCING obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ListaOutsourcingAD.AgregarAD(obj);
+                ListaOutsourcingAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -36,12 +36,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(LISTAS_OUTSOURCING obj)
+        public void Eliminar_L(LISTAS_OUTSOURCING obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ListaOutsourcingAD.EliminarAD(obj);
+                ListaOutsourcingAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -51,12 +51,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(LISTAS_OUTSOURCING obj)
+        public void Modificar_L(LISTAS_OUTSOURCING obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ListaOutsourcingAD.ModificarAD(obj);
+                ListaOutsourcingAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -66,14 +66,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<LISTAS_OUTSOURCING> obtenerListaAD()
+        public IEnumerable<LISTAS_OUTSOURCING> devolverLISTA_L()
         {
-            return ListaOutsourcingAD.obtenerListaAD();
+            return ListaOutsourcingAD.devolverLISTA_D();
         }
 
-        public LISTAS_OUTSOURCING obtenerPorID_AD(int id)
+        public LISTAS_OUTSOURCING buscarporID_L(int id)
         {
-            return ListaOutsourcingAD.obtenerPorID_AD(id);
+            return ListaOutsourcingAD.buscarporID(id);
         }
     }
 }

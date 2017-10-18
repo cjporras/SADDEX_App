@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
-  public  class CategoriaBonoAD
+  public  class CategoriaBonoAD : clsInterfaceDatos<CATEGORIA_BONOS>
     {
 
         SADDEXEntities context;
@@ -18,12 +18,12 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(CATEGORIA_BONOS obj)
+        public void Agregar_D(CATEGORIA_BONOS obj)
         {
             this.context.CATEGORIA_BONOS.Add(obj);
         }
 
-        public void EliminarAD(CATEGORIA_BONOS obj)
+        public void Eliminar_D(CATEGORIA_BONOS obj)
         {
             var categoriaBono = context.CATEGORIA_BONOS.Where(com => com.ID_CATEGORIA_BONO == obj.ID_CATEGORIA_BONO).FirstOrDefault();
             if (categoriaBono != null)
@@ -32,7 +32,7 @@ namespace Datos.Implementaciones
             }
         }
 
-        public void ModificarAD(CATEGORIA_BONOS obj)
+        public void Modificar_D(CATEGORIA_BONOS obj)
         {
             var categoriaBono = context.CATEGORIA_BONOS.Where(com => com.ID_CATEGORIA_BONO == obj.ID_CATEGORIA_BONO).FirstOrDefault();
             if (categoriaBono != null)
@@ -43,12 +43,12 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<CATEGORIA_BONOS> obtenerListaAD()
+        public IEnumerable<CATEGORIA_BONOS> devolverLISTA_D()
         {
             return this.context.CATEGORIA_BONOS;
         }
 
-        public CATEGORIA_BONOS obtenerPorID_AD(int id)
+        public CATEGORIA_BONOS buscarporID(int id)
         {
             return this.context.CATEGORIA_BONOS.Where(com => com.ID_CATEGORIA_BONO == id).FirstOrDefault();
         }

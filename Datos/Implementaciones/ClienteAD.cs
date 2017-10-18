@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
-  public class ClienteAD
+  public class ClienteAD : clsInterfaceDatos<CLIENTES>
     {
 
         SADDEXEntities context;
@@ -18,12 +18,12 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(CLIENTES obj)
+        public void Agregar_D(CLIENTES obj)
         {
             this.context.CLIENTES.Add(obj);
         }
 
-        public void EliminarAD(CLIENTES obj)
+        public void Eliminar_D(CLIENTES obj)
         {
             var cliente = context.CLIENTES.Where(com => com.ID_CLIENTE == obj.ID_CLIENTE).FirstOrDefault();
             if (cliente != null)
@@ -32,7 +32,7 @@ namespace Datos.Implementaciones
             }
         }
 
-        public void ModificarAD(CLIENTES obj)
+        public void Modificar_D(CLIENTES obj)
         {
             var cliente = context.CLIENTES.Where(com => com.ID_CLIENTE == obj.ID_CLIENTE).FirstOrDefault();
             if (cliente != null)
@@ -52,12 +52,12 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<CLIENTES> obtenerListaAD()
+        public IEnumerable<CLIENTES> devolverLISTA_D()
         {
             return this.context.CLIENTES;
         }
 
-        public CLIENTES obtenerPorID_AD(int id)
+        public CLIENTES buscarporID(int id)
         {
             return this.context.CLIENTES.Where(com => com.ID_CLIENTE == id).FirstOrDefault();
         }

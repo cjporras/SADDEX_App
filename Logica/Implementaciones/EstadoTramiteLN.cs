@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class EstadoTramiteLN
+    class EstadoTramiteLN : clsInterfaceLogica<ESTADO_TRAMITES>
     {
         SADDEXEntities context;
         EstadoTramiteAD EstadoTramiteAD;
@@ -22,12 +22,12 @@ namespace Logica.Implementaciones
         }
 
 
-        public void AgregarAD(ESTADO_TRAMITES obj)
+        public void Agregar_L(ESTADO_TRAMITES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                EstadoTramiteAD.AgregarAD(obj);
+                EstadoTramiteAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -37,12 +37,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(ESTADO_TRAMITES obj)
+        public void Eliminar_L(ESTADO_TRAMITES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                EstadoTramiteAD.EliminarAD(obj);
+                EstadoTramiteAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -52,12 +52,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(ESTADO_TRAMITES obj)
+        public void Modificar_L(ESTADO_TRAMITES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                EstadoTramiteAD.ModificarAD(obj);
+                EstadoTramiteAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -67,14 +67,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<ESTADO_TRAMITES> obtenerListaAD()
+        public IEnumerable<ESTADO_TRAMITES> devolverLISTA_L()
         {
-            return EstadoTramiteAD.obtenerListaAD();
+            return EstadoTramiteAD.devolverLISTA_D();
         }
 
-        public ESTADO_TRAMITES obtenerPorID_AD(int id)
+        public ESTADO_TRAMITES buscarporID_L(int id)
         {
-            return EstadoTramiteAD.obtenerPorID_AD(id);
+            return EstadoTramiteAD.buscarporID(id);
         }
     }
 }
