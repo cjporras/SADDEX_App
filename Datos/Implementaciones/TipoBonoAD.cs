@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
-  public  class TipoBonoAD
+  public  class TipoBonoAD : clsInterfaceDatos<TIPO_BONOS>
     {
         SADDEXEntities context;
 
@@ -17,23 +17,23 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(TIPO_BONOS obj)
+        public void Agregar_D(TIPO_BONOS obj)
         {
             this.context.TIPO_BONOS.Add(obj);
         }
 
-        public void EliminarAD(TIPO_BONOS obj)
+        public void Eliminar_D(TIPO_BONOS obj)
         {
-            var tipoBono = context.TIPO_BONOS.Where(com => com.ID_TIPO_BONO == obj.ID_TIPO_BONO).FirstOrDefault();
+            var tipoBono = context.TIPO_BONOS.Where(tip_bon => tip_bon.ID_TIPO_BONO == obj.ID_TIPO_BONO).FirstOrDefault();
             if (tipoBono != null)
             {
                 this.context.TIPO_BONOS.Remove(tipoBono);
             }
         }
 
-        public void ModificarAD(TIPO_BONOS obj)
+        public void Modificar_D(TIPO_BONOS obj)
         {
-            var tipoBono = context.TIPO_BONOS.Where(com => com.ID_TIPO_BONO == obj.ID_TIPO_BONO).FirstOrDefault();
+            var tipoBono = context.TIPO_BONOS.Where(tip_bon => tip_bon.ID_TIPO_BONO == obj.ID_TIPO_BONO).FirstOrDefault();
             if (tipoBono != null)
             {
                 tipoBono.NOMBRE_TIPO_BONO = obj.NOMBRE_TIPO_BONO;
@@ -42,14 +42,14 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<TIPO_BONOS> obtenerListaAD()
+        public IEnumerable<TIPO_BONOS> devolverLISTA_D()
         {
             return this.context.TIPO_BONOS;
         }
 
-        public TIPO_BONOS obtenerPorID_AD(int id)
+        public TIPO_BONOS buscarporID(int id)
         {
-            return this.context.TIPO_BONOS.Where(com => com.ID_TIPO_BONO == id).FirstOrDefault();
+            return this.context.TIPO_BONOS.Where(tip_bon => tip_bon.ID_TIPO_BONO == id).FirstOrDefault();
         }
     }
 }

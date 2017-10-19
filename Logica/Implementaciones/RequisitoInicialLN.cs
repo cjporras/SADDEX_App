@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class RequisitoInicialLN
+    class RequisitoInicialLN : clsInterfaceLogica<REQUISITOS_INICIALES>
     {
         SADDEXEntities context;
         RequisitoInicialAD RequisitoInicialAD;
@@ -22,12 +22,12 @@ namespace Logica.Implementaciones
         }
 
 
-        public void AgregarAD(REQUISITOS_INICIALES obj)
+        public void Agregar_L(REQUISITOS_INICIALES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                RequisitoInicialAD.AgregarAD(obj);
+                RequisitoInicialAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -37,12 +37,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(REQUISITOS_INICIALES obj)
+        public void Eliminar_L(REQUISITOS_INICIALES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                RequisitoInicialAD.EliminarAD(obj);
+                RequisitoInicialAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -52,12 +52,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(REQUISITOS_INICIALES obj)
+        public void Modificar_L(REQUISITOS_INICIALES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                RequisitoInicialAD.ModificarAD(obj);
+                RequisitoInicialAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -67,14 +67,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<REQUISITOS_INICIALES> obtenerListaAD()
+        public IEnumerable<REQUISITOS_INICIALES> devolverLISTA_L()
         {
-            return RequisitoInicialAD.obtenerListaAD();
+            return RequisitoInicialAD.devolverLISTA_D();
         }
 
-        public REQUISITOS_INICIALES obtenerPorID_AD(int id)
+        public REQUISITOS_INICIALES buscarporID_L(int id)
         {
-            return RequisitoInicialAD.obtenerPorID_AD(id);
+            return RequisitoInicialAD.buscarporID(id);
         }
     }
 }

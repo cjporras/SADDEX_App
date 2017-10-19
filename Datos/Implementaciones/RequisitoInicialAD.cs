@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
- public   class RequisitoInicialAD
+ public   class RequisitoInicialAD : clsInterfaceDatos<REQUISITOS_INICIALES>
     {
         SADDEXEntities context;
 
@@ -17,23 +17,23 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(REQUISITOS_INICIALES obj)
+        public void Agregar_D(REQUISITOS_INICIALES obj)
         {
             this.context.REQUISITOS_INICIALES.Add(obj);
         }
 
-        public void EliminarAD(REQUISITOS_INICIALES obj)
+        public void Eliminar_D(REQUISITOS_INICIALES obj)
         {
-            var requisito = context.REQUISITOS_INICIALES.Where(com => com.ID_REQUISITO == obj.ID_REQUISITO).FirstOrDefault();
+            var requisito = context.REQUISITOS_INICIALES.Where(req => req.ID_REQUISITO == obj.ID_REQUISITO).FirstOrDefault();
             if (requisito != null)
             {
                 this.context.REQUISITOS_INICIALES.Remove(requisito);
             }
         }
 
-        public void ModificarAD(REQUISITOS_INICIALES obj)
+        public void Modificar_D(REQUISITOS_INICIALES obj)
         {
-            var requisito = context.REQUISITOS_INICIALES.Where(com => com.ID_REQUISITO == obj.ID_REQUISITO).FirstOrDefault();
+            var requisito = context.REQUISITOS_INICIALES.Where(req => req.ID_REQUISITO == obj.ID_REQUISITO).FirstOrDefault();
             if (requisito != null)
             {
                 requisito.COPIA_CEDULA = obj.COPIA_CEDULA;
@@ -53,14 +53,14 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<REQUISITOS_INICIALES> obtenerListaAD()
+        public IEnumerable<REQUISITOS_INICIALES> devolverLISTA_D()
         {
             return this.context.REQUISITOS_INICIALES;
         }
 
-        public REQUISITOS_INICIALES obtenerPorID_AD(int id)
+        public REQUISITOS_INICIALES buscarporID(int id)
         {
-            return this.context.REQUISITOS_INICIALES.Where(com => com.ID_REQUISITO == id).FirstOrDefault();
+            return this.context.REQUISITOS_INICIALES.Where(req => req.ID_REQUISITO == id).FirstOrDefault();
         }
     }
 }

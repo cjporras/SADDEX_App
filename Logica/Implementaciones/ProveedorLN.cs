@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class ProveedorLN
+    class ProveedorLN : clsInterfaceLogica<PROVEEDORES>
     {
         SADDEXEntities context;
         ProveedorAD ProveedorAD;
@@ -21,12 +21,12 @@ namespace Logica.Implementaciones
             ProveedorAD = new ProveedorAD(context);
         }
 
-        public void AgregarAD(PROVEEDORES obj)
+        public void Agregar_L(PROVEEDORES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ProveedorAD.AgregarAD(obj);
+                ProveedorAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -36,12 +36,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(PROVEEDORES obj)
+        public void Eliminar_L(PROVEEDORES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ProveedorAD.EliminarAD(obj);
+                ProveedorAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -51,12 +51,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(PROVEEDORES obj)
+        public void Modificar_L(PROVEEDORES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                ProveedorAD.ModificarAD(obj);
+                ProveedorAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -66,14 +66,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<PROVEEDORES> obtenerListaAD()
+        public IEnumerable<PROVEEDORES> devolverLISTA_L()
         {
-            return ProveedorAD.obtenerListaAD();
+            return ProveedorAD.devolverLISTA_D();
         }
 
-        public PROVEEDORES obtenerPorID_AD(int id)
+        public PROVEEDORES buscarporID_L(int id)
         {
-            return ProveedorAD.obtenerPorID_AD(id);
+            return ProveedorAD.buscarporID(id);
         }
     }
 }

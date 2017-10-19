@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class PagoProveedorLN
+    class PagoProveedorLN : clsInterfaceLogica<PAGOS_X_PROVEEDORES>
     {
         SADDEXEntities context;
         PagoPorProveedorAD PagoPorProveedorAD;
@@ -22,12 +22,12 @@ namespace Logica.Implementaciones
         }
 
 
-        public void AgregarAD(PAGOS_X_PROVEEDORES obj)
+        public void Agregar_L(PAGOS_X_PROVEEDORES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                PagoPorProveedorAD.AgregarAD(obj);
+                PagoPorProveedorAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -37,12 +37,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(PAGOS_X_PROVEEDORES obj)
+        public void Eliminar_L(PAGOS_X_PROVEEDORES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                PagoPorProveedorAD.EliminarAD(obj);
+                PagoPorProveedorAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -52,12 +52,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(PAGOS_X_PROVEEDORES obj)
+        public void Modificar_L(PAGOS_X_PROVEEDORES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                PagoPorProveedorAD.ModificarAD(obj);
+                PagoPorProveedorAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -67,14 +67,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<PAGOS_X_PROVEEDORES> obtenerListaAD()
+        public IEnumerable<PAGOS_X_PROVEEDORES> devolverLISTA_L()
         {
-            return PagoPorProveedorAD.obtenerListaAD();
+            return PagoPorProveedorAD.devolverLISTA_D();
         }
 
-        public PAGOS_X_PROVEEDORES obtenerPorID_AD(int id)
+        public PAGOS_X_PROVEEDORES buscarporID_L(int id)
         {
-            return PagoPorProveedorAD.obtenerPorID_AD(id);
+            return PagoPorProveedorAD.buscarporID(id);
         }
     }
 }

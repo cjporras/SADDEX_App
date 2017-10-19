@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class PuestoLN
+    class PuestoLN : clsInterfaceLogica<PUESTOS>
     {
         SADDEXEntities context;
         PuestoAD PuestoAD;
@@ -21,12 +21,12 @@ namespace Logica.Implementaciones
             PuestoAD = new PuestoAD(context);
         }
 
-        public void AgregarAD(PUESTOS obj)
+        public void Agregar_L(PUESTOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                PuestoAD.AgregarAD(obj);
+                PuestoAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -36,12 +36,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(PUESTOS obj)
+        public void Eliminar_L(PUESTOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                PuestoAD.EliminarAD(obj);
+                PuestoAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -51,12 +51,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(PUESTOS obj)
+        public void Modificar_L(PUESTOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                PuestoAD.ModificarAD(obj);
+                PuestoAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -66,14 +66,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<PUESTOS> obtenerListaAD()
+        public IEnumerable<PUESTOS> devolverLISTA_L()
         {
-            return PuestoAD.obtenerListaAD();
+            return PuestoAD.devolverLISTA_D();
         }
 
-        public PUESTOS obtenerPorID_AD(int id)
+        public PUESTOS buscarporID_L(int id)
         {
-            return PuestoAD.obtenerPorID_AD(id);
+            return PuestoAD.buscarporID(id);
         }
     }
 }

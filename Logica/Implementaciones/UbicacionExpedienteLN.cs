@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class UbicacionExpedienteLN
+    class UbicacionExpedienteLN : clsInterfaceLogica<UBICACION_EXPEDIENTES>
     {
         SADDEXEntities context;
         UbicacionExpedienteAD UbicacionExpedienteAD;
@@ -22,12 +22,12 @@ namespace Logica.Implementaciones
         }
 
 
-        public void AgregarAD(UBICACION_EXPEDIENTES obj)
+        public void Agregar_L(UBICACION_EXPEDIENTES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                UbicacionExpedienteAD.AgregarAD(obj);
+                UbicacionExpedienteAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -37,12 +37,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(UBICACION_EXPEDIENTES obj)
+        public void Eliminar_L(UBICACION_EXPEDIENTES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                UbicacionExpedienteAD.EliminarAD(obj);
+                UbicacionExpedienteAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -52,12 +52,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(UBICACION_EXPEDIENTES obj)
+        public void Modificar_L(UBICACION_EXPEDIENTES obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                UbicacionExpedienteAD.ModificarAD(obj);
+                UbicacionExpedienteAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -67,14 +67,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<UBICACION_EXPEDIENTES> obtenerListaAD()
+        public IEnumerable<UBICACION_EXPEDIENTES> devolverLISTA_L()
         {
-            return UbicacionExpedienteAD.obtenerListaAD();
+            return UbicacionExpedienteAD.devolverLISTA_D();
         }
 
-        public UBICACION_EXPEDIENTES obtenerPorID_AD(int id)
+        public UBICACION_EXPEDIENTES buscarporID_L(int id)
         {
-            return UbicacionExpedienteAD.obtenerPorID_AD(id);
+            return UbicacionExpedienteAD.buscarporID(id);
         }
     }
 }

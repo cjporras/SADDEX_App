@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class OutsourcingLN
+    class OutsourcingLN : clsInterfaceLogica<OUTSOURCING_S>
     {
         SADDEXEntities context;
         OutsourcingAD OutsourcingAD;
@@ -22,7 +22,7 @@ namespace Logica.Implementaciones
         }
 
 
-        public void AgregarAD(OUTSOURCING_S obj)
+        public void Agregar_L(OUTSOURCING_S obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
@@ -37,7 +37,7 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(OUTSOURCING_S obj)
+        public void Eliminar_L(OUTSOURCING_S obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
@@ -52,7 +52,7 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(OUTSOURCING_S obj)
+        public void Modificar_L(OUTSOURCING_S obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
@@ -67,14 +67,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<OUTSOURCING_S> obtenerListaAD()
+        public IEnumerable<OUTSOURCING_S> devolverLISTA_L()
         {
-            return OutsourcingAD.obtenerListaAD();
+            return OutsourcingAD.devolverLISTA_D();
         }
 
-        public OUTSOURCING_S obtenerPorID_AD(int id)
+        public OUTSOURCING_S buscarporID_L(int id)
         {
-            return OutsourcingAD.obtenerPorID_AD(id);
+            return OutsourcingAD.buscarporID(id);
         }
     }
 }

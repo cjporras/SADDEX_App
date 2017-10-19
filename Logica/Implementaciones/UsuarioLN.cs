@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Entidades;
 using Datos.Implementaciones;
 using Datos;
+using Logica.Interface;
 
     namespace Logica
 {
-  public class UsuarioLN
+  public class UsuarioLN  : clsInterfaceLogica<USUARIOS>
     {
         SADDEXEntities context;
         UsuarioAD UsuarioAD;
@@ -20,12 +21,12 @@ using Datos;
             UsuarioAD = new UsuarioAD(context);
         }
 
-        public void AgregarAD(USUARIOS obj)
+        public void Agregar_L(USUARIOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                UsuarioAD.AgregarAD(obj);
+                UsuarioAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -35,12 +36,12 @@ using Datos;
             }
         }
 
-        public void EliminarAD(USUARIOS obj)
+        public void Eliminar_L(USUARIOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                UsuarioAD.EliminarAD(obj);
+                UsuarioAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -50,12 +51,12 @@ using Datos;
             }
         }
 
-        public void ModificarAD(USUARIOS obj)
+        public void Modificar_L(USUARIOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                UsuarioAD.ModificarAD(obj);
+                UsuarioAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -65,14 +66,14 @@ using Datos;
             }
         }
 
-        public IEnumerable<USUARIOS> obtenerListaAD()
+        public IEnumerable<USUARIOS> devolverLISTA_L()
         {
-            return UsuarioAD.obtenerListaAD();
+            return UsuarioAD.devolverLISTA_D();
         }
 
-        public USUARIOS obtenerPorID_AD(int id)
+        public USUARIOS buscarporID_L(int id)
         {
-            return UsuarioAD.obtenerPorID_AD(id);
+            return UsuarioAD.buscarporID(id);
         }
     }
 }

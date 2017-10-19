@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
- public   class ProveedorAD
+ public   class ProveedorAD : clsInterfaceDatos<PROVEEDORES>
     {
         SADDEXEntities context;
 
@@ -17,24 +17,16 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(PROVEEDORES obj)
+       public void Agregar_D(PROVEEDORES obj)
         {
             this.context.PROVEEDORES.Add(obj);
         }
 
-        public void EliminarAD(PROVEEDORES obj)
+        public void Modificar_D(PROVEEDORES obj)
         {
-            var proveedor = context.PROVEEDORES.Where(com => com.ID_PROVEEDOR == obj.ID_PROVEEDOR).FirstOrDefault();
-            if (proveedor != null)
-            {
-                this.context.PROVEEDORES.Remove(proveedor);
-            }
-        }
-
-        public void ModificarAD(PROVEEDORES obj)
-        {
-            var proveedor = context.PROVEEDORES.Where(com => com.ID_PROVEEDOR == obj.ID_PROVEEDOR).FirstOrDefault();
-            if (proveedor != null)
+            //consulta para cuando se seleccione el id lo compare con el de la tabla de la base de datos
+            var proveedor = context.PROVEEDORES.Where(prov => prov.ID_PROVEEDOR == obj.ID_PROVEEDOR).FirstOrDefault();
+            if(proveedor != null)
             {
                 proveedor.NOMBRE_PROVEEDOR = obj.NOMBRE_PROVEEDOR;
                 proveedor.UBICACION = obj.UBICACION;
@@ -44,14 +36,26 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<PROVEEDORES> obtenerListaAD()
+        public void Eliminar_D(PROVEEDORES obj)
+        {
+            var proveedor = context.PROVEEDORES.Where(prov => prov.ID_PROVEEDOR == obj.ID_PROVEEDOR).FirstOrDefault();
+            if(proveedor != null)
+            {
+                this.context.PROVEEDORES.Remove(proveedor);
+            }
+        }
+
+        public IEnumerable<PROVEEDORES> devolverLISTA_D()
         {
             return this.context.PROVEEDORES;
         }
 
-        public PROVEEDORES obtenerPorID_AD(int id)
+        public PROVEEDORES buscarporID(int id)
         {
-            return this.context.PROVEEDORES.Where(com => com.ID_PROVEEDOR == id).FirstOrDefault();
+            return this.context.PROVEEDORES.Where(prov => prov.ID_PROVEEDOR == id).FirstOrDefault();
         }
+
+
+        
     }
 }

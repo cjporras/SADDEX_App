@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
+using Datos.Interface;
 
 namespace Datos.Implementaciones
 {
- public class UsuarioAD
+ public class UsuarioAD : clsInterfaceDatos<USUARIOS>
     {
         SADDEXEntities context;
 
@@ -16,23 +17,23 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(USUARIOS obj)
+        public void Agregar_D(USUARIOS obj)
         {
             this.context.USUARIOS.Add(obj);
         }
 
-        public void EliminarAD(USUARIOS obj)
+        public void Eliminar_D(USUARIOS obj)
         {
-            var usuario = context.USUARIOS.Where(com => com.ID_USUARIO == obj.ID_USUARIO).FirstOrDefault();
+            var usuario = context.USUARIOS.Where(usu => usu.ID_USUARIO == obj.ID_USUARIO).FirstOrDefault();
             if (usuario != null)
             {
                 this.context.USUARIOS.Remove(usuario);
             }
         }
 
-        public void ModificarAD(USUARIOS obj)
+        public void Modificar_D(USUARIOS obj)
         {
-            var usuario = context.USUARIOS.Where(com => com.ID_USUARIO == obj.ID_USUARIO).FirstOrDefault();
+            var usuario = context.USUARIOS.Where(usu => usu.ID_USUARIO == obj.ID_USUARIO).FirstOrDefault();
             if (usuario != null)
             {
                 usuario.NOMBRE_USUARIO = obj.NOMBRE_USUARIO;
@@ -41,14 +42,20 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<USUARIOS> obtenerListaAD()
+        public IEnumerable<USUARIOS> devolverLISTA_D()
         {
             return this.context.USUARIOS;
         }
 
-        public USUARIOS obtenerPorID_AD(int id)
+        public USUARIOS buscarporID(int id)
         {
-            return this.context.USUARIOS.Where(com => com.ID_USUARIO == id).FirstOrDefault();
+            return this.context.USUARIOS.Where(usu => usu.ID_USUARIO == id).FirstOrDefault();
         }
+
+        public USUARIOS validarIngreso_DD(USUARIOS usuario)
+        {
+            return this.context.USUARIOS.FirstOrDefault(usu => usu.NOMBRE_USUARIO.Equals(usuario.NOMBRE_USUARIO) && usu.CONTRASEÑA.Equals(usuario.CONTRASEÑA));
+        }
+
     }
 }

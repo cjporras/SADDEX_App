@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class TipoBonoLN
+    class TipoBonoLN : clsInterfaceLogica<TIPO_BONOS>
     {
         SADDEXEntities context;
         TipoBonoAD TipoBonoAD;
@@ -22,12 +22,12 @@ namespace Logica.Implementaciones
         }
 
 
-        public void AgregarAD(TIPO_BONOS obj)
+        public void Agregar_L(TIPO_BONOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                TipoBonoAD.AgregarAD(obj);
+                TipoBonoAD.Agregar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -37,12 +37,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void EliminarAD(TIPO_BONOS obj)
+        public void Eliminar_L(TIPO_BONOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                TipoBonoAD.EliminarAD(obj);
+                TipoBonoAD.Eliminar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -52,12 +52,12 @@ namespace Logica.Implementaciones
             }
         }
 
-        public void ModificarAD(TIPO_BONOS obj)
+        public void Modificar_L(TIPO_BONOS obj)
         {
             var trans = this.context.Database.BeginTransaction();
             try
             {
-                TipoBonoAD.ModificarAD(obj);
+                TipoBonoAD.Modificar_D(obj);
                 this.context.SaveChanges();
                 trans.Commit();
             }
@@ -67,14 +67,14 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<TIPO_BONOS> obtenerListaAD()
+        public IEnumerable<TIPO_BONOS> devolverLISTA_L()
         {
-            return TipoBonoAD.obtenerListaAD();
+            return TipoBonoAD.devolverLISTA_D();
         }
 
-        public TIPO_BONOS obtenerPorID_AD(int id)
+        public TIPO_BONOS buscarporID_L(int id)
         {
-            return TipoBonoAD.obtenerPorID_AD(id);
+            return TipoBonoAD.buscarporID(id);
         }
     }
 }

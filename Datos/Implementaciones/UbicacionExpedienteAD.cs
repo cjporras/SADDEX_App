@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
- public class UbicacionExpedienteAD
+ public class UbicacionExpedienteAD : clsInterfaceDatos<UBICACION_EXPEDIENTES>
     {
         SADDEXEntities context;
 
@@ -17,23 +17,23 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(UBICACION_EXPEDIENTES obj)
+        public void Agregar_D(UBICACION_EXPEDIENTES obj)
         {
             this.context.UBICACION_EXPEDIENTES.Add(obj);
         }
 
-        public void EliminarAD(UBICACION_EXPEDIENTES obj)
+        public void Eliminar_D(UBICACION_EXPEDIENTES obj)
         {
-            var ubicacion = context.UBICACION_EXPEDIENTES.Where(com => com.ID_UBICACION_EXPEIENTE == obj.ID_UBICACION_EXPEIENTE).FirstOrDefault();
+            var ubicacion = context.UBICACION_EXPEDIENTES.Where(ubc_exp => ubc_exp.ID_UBICACION_EXPEIENTE == obj.ID_UBICACION_EXPEIENTE).FirstOrDefault();
             if (ubicacion != null)
             {
                 this.context.UBICACION_EXPEDIENTES.Remove(ubicacion);
             }
         }
 
-        public void ModificarAD(UBICACION_EXPEDIENTES obj)
+        public void Modificar_D(UBICACION_EXPEDIENTES obj)
         {
-            var ubicacion = context.UBICACION_EXPEDIENTES.Where(com => com.ID_UBICACION_EXPEIENTE == obj.ID_UBICACION_EXPEIENTE).FirstOrDefault();
+            var ubicacion = context.UBICACION_EXPEDIENTES.Where(ubc_exp => ubc_exp.ID_UBICACION_EXPEIENTE == obj.ID_UBICACION_EXPEIENTE).FirstOrDefault();
             if (ubicacion != null)
             {
                 ubicacion.NOMBRE_UBICACION = obj.NOMBRE_UBICACION;
@@ -43,14 +43,14 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<UBICACION_EXPEDIENTES> obtenerListaAD()
+        public IEnumerable<UBICACION_EXPEDIENTES> devolverLISTA_D()
         {
             return this.context.UBICACION_EXPEDIENTES;
         }
 
-        public UBICACION_EXPEDIENTES obtenerPorID_AD(int id)
+        public UBICACION_EXPEDIENTES buscarporID(int id)
         {
-            return this.context.UBICACION_EXPEDIENTES.Where(com => com.ID_UBICACION_EXPEIENTE == id).FirstOrDefault();
+            return this.context.UBICACION_EXPEDIENTES.Where(ubc_exp => ubc_exp.ID_UBICACION_EXPEIENTE == id).FirstOrDefault();
         }
     }
 }

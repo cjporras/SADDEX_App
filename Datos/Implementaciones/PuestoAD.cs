@@ -8,7 +8,7 @@ using Entidades;
 
 namespace Datos.Implementaciones
 {
- public   class PuestoAD
+ public   class PuestoAD : clsInterfaceDatos<PUESTOS>
     {
         SADDEXEntities context;
 
@@ -17,23 +17,23 @@ namespace Datos.Implementaciones
             this.context = context;
         }
 
-        public void AgregarAD(PUESTOS obj)
+        public void Agregar_D(PUESTOS obj)
         {
             this.context.PUESTOS.Add(obj);
         }
 
-        public void EliminarAD(PUESTOS obj)
+        public void Eliminar_D(PUESTOS obj)
         {
-            var puesto = context.PUESTOS.Where(com => com.ID_PUESTO == obj.ID_PUESTO).FirstOrDefault();
+            var puesto = context.PUESTOS.Where(puest => puest.ID_PUESTO == obj.ID_PUESTO).FirstOrDefault();
             if (puesto != null)
             {
                 this.context.PUESTOS.Remove(puesto);
             }
         }
 
-        public void ModificarAD(PUESTOS obj)
+        public void Modificar_D(PUESTOS obj)
         {
-            var puesto = context.PUESTOS.Where(com => com.ID_PUESTO == obj.ID_PUESTO).FirstOrDefault();
+            var puesto = context.PUESTOS.Where(puest => puest.ID_PUESTO == obj.ID_PUESTO).FirstOrDefault();
             if (puesto != null)
             {
                 puesto.NOMBRE_PUESTO = obj.NOMBRE_PUESTO;
@@ -41,14 +41,14 @@ namespace Datos.Implementaciones
             }
         }
 
-        public IEnumerable<PUESTOS> obtenerListaAD()
+        public IEnumerable<PUESTOS> devolverLISTA_D()
         {
             return this.context.PUESTOS;
         }
 
-        public PUESTOS obtenerPorID_AD(int id)
+        public PUESTOS buscarporID(int id)
         {
-            return this.context.PUESTOS.Where(com => com.ID_PUESTO == id).FirstOrDefault();
+            return this.context.PUESTOS.Where(puest => puest.ID_PUESTO == id).FirstOrDefault();
         }
     }
 }
