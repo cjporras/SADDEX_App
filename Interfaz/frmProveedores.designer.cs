@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtServicioProveedo = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCorreoElect = new System.Windows.Forms.TextBox();
@@ -60,8 +60,10 @@
             this.txtTelefonoOpcional = new System.Windows.Forms.MaskedTextBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.txtServicioProveedo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -83,7 +85,7 @@
             // 
             this.txtNombreProveedor.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreProveedor.Location = new System.Drawing.Point(20, 126);
-            this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(241, 30);
             this.txtNombreProveedor.TabIndex = 105;
@@ -104,7 +106,7 @@
             // 
             this.txtCedJuridica.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCedJuridica.Location = new System.Drawing.Point(271, 126);
-            this.txtCedJuridica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCedJuridica.Margin = new System.Windows.Forms.Padding(4);
             this.txtCedJuridica.Name = "txtCedJuridica";
             this.txtCedJuridica.Size = new System.Drawing.Size(207, 30);
             this.txtCedJuridica.TabIndex = 107;
@@ -138,23 +140,23 @@
             this.dgvProveedor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedor.Location = new System.Drawing.Point(13, 453);
-            this.dgvProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.Size = new System.Drawing.Size(904, 267);
             this.dgvProveedor.TabIndex = 117;
             // 
-            // groupBox1
+            // txtServicioProveedo
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1069, 81);
-            this.groupBox1.TabIndex = 121;
-            this.groupBox1.TabStop = false;
+            this.txtServicioProveedo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtServicioProveedo.Controls.Add(this.label15);
+            this.txtServicioProveedo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServicioProveedo.Location = new System.Drawing.Point(0, 2);
+            this.txtServicioProveedo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtServicioProveedo.Name = "txtServicioProveedo";
+            this.txtServicioProveedo.Padding = new System.Windows.Forms.Padding(4);
+            this.txtServicioProveedo.Size = new System.Drawing.Size(1069, 81);
+            this.txtServicioProveedo.TabIndex = 121;
+            this.txtServicioProveedo.TabStop = false;
             // 
             // label15
             // 
@@ -183,7 +185,7 @@
             // txtCorreoElect
             // 
             this.txtCorreoElect.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoElect.Location = new System.Drawing.Point(16, 196);
+            this.txtCorreoElect.Location = new System.Drawing.Point(16, 259);
             this.txtCorreoElect.Margin = new System.Windows.Forms.Padding(4);
             this.txtCorreoElect.Name = "txtCorreoElect";
             this.txtCorreoElect.Size = new System.Drawing.Size(245, 30);
@@ -193,7 +195,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 173);
+            this.label6.Location = new System.Drawing.Point(16, 236);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(161, 19);
@@ -253,7 +255,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 246);
+            this.label9.Location = new System.Drawing.Point(16, 299);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 19);
@@ -264,7 +266,7 @@
             // txtOtrasSeñas
             // 
             this.txtOtrasSeñas.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOtrasSeñas.Location = new System.Drawing.Point(16, 269);
+            this.txtOtrasSeñas.Location = new System.Drawing.Point(16, 321);
             this.txtOtrasSeñas.Margin = new System.Windows.Forms.Padding(4);
             this.txtOtrasSeñas.Name = "txtOtrasSeñas";
             this.txtOtrasSeñas.Size = new System.Drawing.Size(245, 30);
@@ -429,12 +431,35 @@
             this.label10.Text = "Observaciones";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(19, 167);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(196, 19);
+            this.label11.TabIndex = 146;
+            this.label11.Text = "Servicio del proveedor";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(19, 190);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(245, 30);
+            this.textBox1.TabIndex = 145;
+            // 
             // frmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1068, 733);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtTelefonoOpcional);
@@ -457,7 +482,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtCorreoElect);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtServicioProveedo);
             this.Controls.Add(this.dgvProveedor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtCedJuridica);
@@ -466,13 +491,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proveedores";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.txtServicioProveedo.ResumeLayout(false);
+            this.txtServicioProveedo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -489,7 +514,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvProveedor;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox txtServicioProveedo;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCorreoElect;
@@ -513,5 +538,7 @@
         private System.Windows.Forms.MaskedTextBox txtTelefonoOpcional;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

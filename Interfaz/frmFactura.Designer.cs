@@ -30,6 +30,7 @@
         {
             this.btnLimpiarFactura = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRegresarFactura = new System.Windows.Forms.Button();
             this.dgvFactura = new System.Windows.Forms.DataGridView();
@@ -50,7 +51,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dtpFechaFacturacion = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,6 +59,8 @@
             this.txtTotall = new System.Windows.Forms.TextBox();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txtTotal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +92,16 @@
             this.txtTotal.Size = new System.Drawing.Size(1435, 78);
             this.txtTotal.TabIndex = 129;
             this.txtTotal.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(560, 35);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(276, 29);
+            this.label12.TabIndex = 115;
+            this.label12.Text = "Detalle de Facturación";
             // 
             // label3
             // 
@@ -193,7 +205,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(23, 166);
+            this.label8.Location = new System.Drawing.Point(23, 155);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 23);
@@ -215,7 +227,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(296, 166);
+            this.label1.Location = new System.Drawing.Point(296, 155);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 23);
@@ -226,7 +238,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(27, 192);
+            this.comboBox2.Location = new System.Drawing.Point(27, 181);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(219, 24);
             this.comboBox2.TabIndex = 133;
@@ -234,7 +246,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(300, 192);
+            this.comboBox3.Location = new System.Drawing.Point(300, 181);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(219, 24);
             this.comboBox3.TabIndex = 134;
@@ -263,7 +275,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 298);
+            this.label5.Location = new System.Drawing.Point(59, 353);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 23);
@@ -275,7 +287,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(366, 298);
+            this.label6.Location = new System.Drawing.Point(402, 353);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 23);
@@ -287,7 +299,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(182, 298);
+            this.label7.Location = new System.Drawing.Point(218, 353);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 23);
@@ -326,16 +338,6 @@
             this.dtpFechaFacturacion.Size = new System.Drawing.Size(251, 22);
             this.dtpFechaFacturacion.TabIndex = 143;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(560, 35);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(276, 29);
-            this.label12.TabIndex = 115;
-            this.label12.Text = "Detalle de Facturación";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -373,7 +375,7 @@
             // txtSubTotal
             // 
             this.txtSubTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubTotal.Location = new System.Drawing.Point(13, 325);
+            this.txtSubTotal.Location = new System.Drawing.Point(49, 380);
             this.txtSubTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubTotal.Multiline = true;
             this.txtSubTotal.Name = "txtSubTotal";
@@ -383,7 +385,7 @@
             // txtImpuesto
             // 
             this.txtImpuesto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImpuesto.Location = new System.Drawing.Point(172, 325);
+            this.txtImpuesto.Location = new System.Drawing.Point(208, 380);
             this.txtImpuesto.Margin = new System.Windows.Forms.Padding(4);
             this.txtImpuesto.Multiline = true;
             this.txtImpuesto.Name = "txtImpuesto";
@@ -393,7 +395,7 @@
             // txtTotall
             // 
             this.txtTotall.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotall.Location = new System.Drawing.Point(337, 325);
+            this.txtTotall.Location = new System.Drawing.Point(373, 380);
             this.txtTotall.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotall.Multiline = true;
             this.txtTotall.Name = "txtTotall";
@@ -422,12 +424,34 @@
             this.label13.Text = "Monto";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(26, 244);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(219, 24);
+            this.comboBox1.TabIndex = 152;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(22, 218);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(76, 23);
+            this.label14.TabIndex = 151;
+            this.label14.Text = "Cliente";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // frmFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1435, 592);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtTotall);
@@ -501,5 +525,7 @@
         private System.Windows.Forms.TextBox txtTotall;
         private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label14;
     }
 }
