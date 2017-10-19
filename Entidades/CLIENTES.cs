@@ -17,12 +17,10 @@ namespace Entidades
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CLIENTES()
         {
-            this.CATEGORIA_BONOS = new HashSet<CATEGORIA_BONOS>();
             this.EXPEDIENTES_DIGITALES = new HashSet<EXPEDIENTES_DIGITALES>();
-            this.FACTURAS = new HashSet<FACTURAS>();
-            this.OBRAS = new HashSet<OBRAS>();
             this.REQUISITOS_INICIALES = new HashSet<REQUISITOS_INICIALES>();
             this.TIPO_BONOS = new HashSet<TIPO_BONOS>();
+            this.FACTURAS = new HashSet<FACTURAS>();
         }
     
         public int ID_CLIENTE { get; set; }
@@ -42,16 +40,12 @@ namespace Entidades
         public string SEXO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CATEGORIA_BONOS> CATEGORIA_BONOS { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EXPEDIENTES_DIGITALES> EXPEDIENTES_DIGITALES { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FACTURAS> FACTURAS { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OBRAS> OBRAS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REQUISITOS_INICIALES> REQUISITOS_INICIALES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TIPO_BONOS> TIPO_BONOS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FACTURAS> FACTURAS { get; set; }
     }
 }

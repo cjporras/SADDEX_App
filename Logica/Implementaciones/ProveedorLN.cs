@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class ProveedorLN : clsInterfaceLogica<PROVEEDORES>
+    public class ProveedorLN : clsInterfaceLogica<PROVEEDORES>
     {
         SADDEXEntities context;
         ProveedorAD ProveedorAD;

@@ -23,9 +23,7 @@ namespace Entidades
         public int ID_CATEGORIA_BONO { get; set; }
         public string NOBRE_CATEGORIA_BONO { get; set; }
         public string DETALLE_CATEGORIA_BNO { get; set; }
-        public Nullable<int> FK_CLIENTE { get; set; }
     
-        public virtual CLIENTES CLIENTES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EXPEDIENTES_DIGITALES> EXPEDIENTES_DIGITALES { get; set; }
     }

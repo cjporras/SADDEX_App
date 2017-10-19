@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class PagoProveedorLN : clsInterfaceLogica<PAGOS_X_PROVEEDORES>
+    public class PagoProveedorLN : clsInterfaceLogica<PAGOS_X_PROVEEDORES>
     {
         SADDEXEntities context;
         PagoPorProveedorAD PagoPorProveedorAD;

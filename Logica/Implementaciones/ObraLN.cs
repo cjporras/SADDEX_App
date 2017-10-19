@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class ObraLN : clsInterfaceLogica<OBRAS>
+    public class ObraLN : clsInterfaceLogica<OBRAS>
     {
         SADDEXEntities context;
         ObraAD ObraAD;

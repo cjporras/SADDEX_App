@@ -18,7 +18,6 @@ namespace Entidades
         public OBRAS()
         {
             this.EXPEDIENTES_DIGITALES = new HashSet<EXPEDIENTES_DIGITALES>();
-            this.OUTSOURCING_S = new HashSet<OUTSOURCING_S>();
         }
     
         public int ID_OBRA { get; set; }
@@ -27,14 +26,14 @@ namespace Entidades
         public System.DateTime FECHA_INICIO_OBRA { get; set; }
         public Nullable<System.DateTime> FECHA_FINAL_OBRA { get; set; }
         public Nullable<int> COSTO_OBRA { get; set; }
-        public int FK_CLIENTE { get; set; }
         public string DETALLE_OBRA { get; set; }
+        public int FK_ID_EXPEDIENTE_DIGITAL { get; set; }
+        public int FK_ID_OUTSOURCING { get; set; }
     
-        public virtual CLIENTES CLIENTES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EXPEDIENTES_DIGITALES> EXPEDIENTES_DIGITALES { get; set; }
+        public virtual EXPEDIENTES_DIGITALES EXPEDIENTES_DIGITALES1 { get; set; }
         public virtual USUARIOS USUARIOS { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OUTSOURCING_S> OUTSOURCING_S { get; set; }
+        public virtual OUTSOURCING_S OUTSOURCING_S { get; set; }
     }
 }

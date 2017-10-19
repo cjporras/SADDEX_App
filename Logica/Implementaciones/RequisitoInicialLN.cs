@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class RequisitoInicialLN : clsInterfaceLogica<REQUISITOS_INICIALES>
+    public class RequisitoInicialLN : clsInterfaceLogica<REQUISITOS_INICIALES>
     {
         SADDEXEntities context;
         RequisitoInicialAD RequisitoInicialAD;

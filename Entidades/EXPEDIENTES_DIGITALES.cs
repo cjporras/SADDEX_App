@@ -18,6 +18,7 @@ namespace Entidades
         public EXPEDIENTES_DIGITALES()
         {
             this.UBICACION_EXPEDIENTES = new HashSet<UBICACION_EXPEDIENTES>();
+            this.OBRAS1 = new HashSet<OBRAS>();
         }
     
         public int ID_EXPEDIENTE_DIGITAL { get; set; }
@@ -30,13 +31,15 @@ namespace Entidades
         public int FK_ESTADO_TRAMITE { get; set; }
         public int FK_REQUISITOS_INICIALES { get; set; }
     
-        public virtual CATEGORIA_BONOS CATEGORIA_BONOS { get; set; }
         public virtual CLIENTES CLIENTES { get; set; }
         public virtual ESTADO_TRAMITES ESTADO_TRAMITES { get; set; }
-        public virtual OBRAS OBRAS { get; set; }
         public virtual REQUISITOS_INICIALES REQUISITOS_INICIALES { get; set; }
         public virtual USUARIOS USUARIOS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UBICACION_EXPEDIENTES> UBICACION_EXPEDIENTES { get; set; }
+        public virtual CATEGORIA_BONOS CATEGORIA_BONOS { get; set; }
+        public virtual OBRAS OBRAS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OBRAS> OBRAS1 { get; set; }
     }
 }

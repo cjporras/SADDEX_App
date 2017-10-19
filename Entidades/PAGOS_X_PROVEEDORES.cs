@@ -16,12 +16,12 @@ namespace Entidades
     {
         public int ID_PAGO_X_PROVEEDOR { get; set; }
         public int FK_NOMBRE_PROVEEDOR { get; set; }
-        public int MONTO_CHEQUE { get; set; }
+        public double MONTO_CHEQUE { get; set; }
         public System.DateTime FECHA_CHEQUE { get; set; }
         public string NUMERO_CHEQUE { get; set; }
         public int FK_USUARIO { get; set; }
     
-        public virtual PROVEEDORES PROVEEDORES { get; set; }
         public virtual USUARIOS USUARIOS { get; set; }
+        public virtual PROVEEDORES PROVEEDORES { get; set; }
     }
 }

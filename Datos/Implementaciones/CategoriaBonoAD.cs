@@ -39,7 +39,6 @@ namespace Datos.Implementaciones
             {
                 categoriaBono.NOBRE_CATEGORIA_BONO = obj.NOBRE_CATEGORIA_BONO;
                 categoriaBono.DETALLE_CATEGORIA_BNO = obj.DETALLE_CATEGORIA_BNO;
-                categoriaBono.FK_CLIENTE = obj.FK_CLIENTE;
             }
         }
 

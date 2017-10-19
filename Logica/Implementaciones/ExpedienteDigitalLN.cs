@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class ExpedienteDigitalLN : clsInterfaceLogica<EXPEDIENTES_DIGITALES>
+    public class ExpedienteDigitalLN : clsInterfaceLogica<EXPEDIENTES_DIGITALES>
     {
         SADDEXEntities context;
         ExpedienteDigitalAD ExpedienteDigitalAD;

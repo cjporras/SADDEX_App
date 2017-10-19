@@ -46,6 +46,7 @@ namespace Datos.Implementaciones
                 factura.DETALLE = obj.DETALLE;
                 factura.CONCEPTO = obj.CONCEPTO;
                 factura.FECHA_FACTURA = obj.FECHA_FACTURA;
+                factura.MONTO = obj.MONTO;
             }
         }
 

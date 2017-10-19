@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class EstadoTramiteLN : clsInterfaceLogica<ESTADO_TRAMITES>
+    public class EstadoTramiteLN : clsInterfaceLogica<ESTADO_TRAMITES>
     {
         SADDEXEntities context;
         EstadoTramiteAD EstadoTramiteAD;

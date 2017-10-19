@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class ClienteLN : clsInterfaceLogica<CLIENTES>
+    public class ClienteLN : clsInterfaceLogica<CLIENTES>
     {
         SADDEXEntities context;
         ClienteAD ClienteAD;

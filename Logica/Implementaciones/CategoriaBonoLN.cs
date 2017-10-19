@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class CategoriaBonoLN : clsInterfaceLogica<CATEGORIA_BONOS>
+    public class CategoriaBonoLN : clsInterfaceLogica<CATEGORIA_BONOS>
     {
         SADDEXEntities context;
         CategoriaBonoAD CategoriaBonoAD;

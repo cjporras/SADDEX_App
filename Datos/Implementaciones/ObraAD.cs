@@ -41,8 +41,9 @@ namespace Datos.Implementaciones
                 obra.FECHA_INICIO_OBRA = obj.FECHA_INICIO_OBRA;
                 obra.FECHA_FINAL_OBRA = obj.FECHA_FINAL_OBRA;
                 obra.COSTO_OBRA = obj.COSTO_OBRA;
-                obra.FK_CLIENTE = obj.FK_CLIENTE;
                 obra.DETALLE_OBRA = obj.DETALLE_OBRA;
+                obra.FK_ID_EXPEDIENTE_DIGITAL = obj.FK_ID_EXPEDIENTE_DIGITAL;
+                obra.FK_ID_OUTSOURCING = obj.FK_ID_OUTSOURCING;
             }
         }
 

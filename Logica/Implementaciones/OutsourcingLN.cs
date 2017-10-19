@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class OutsourcingLN : clsInterfaceLogica<OUTSOURCING_S>
+    public class OutsourcingLN : clsInterfaceLogica<OUTSOURCING_S>
     {
         SADDEXEntities context;
         OutsourcingAD OutsourcingAD;

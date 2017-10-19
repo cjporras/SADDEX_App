@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class PuestoLN : clsInterfaceLogica<PUESTOS>
+    public class PuestoLN : clsInterfaceLogica<PUESTOS>
     {
         SADDEXEntities context;
         PuestoAD PuestoAD;

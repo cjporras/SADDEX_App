@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class FacturaLN : clsInterfaceLogica<FACTURAS>
+    public class FacturaLN : clsInterfaceLogica<FACTURAS>
     {
         SADDEXEntities context;
         FacturaAD FacturaAD;

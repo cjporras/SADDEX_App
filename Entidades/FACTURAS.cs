@@ -19,16 +19,17 @@ namespace Entidades
         public int FK_PROVEEDOR { get; set; }
         public int FK_OUTSOURCING { get; set; }
         public int FK_USUARIO { get; set; }
-        public int SUB_TOTAL { get; set; }
-        public int TOTAL { get; set; }
-        public Nullable<int> IMPUESTOS { get; set; }
+        public double SUB_TOTAL { get; set; }
+        public double TOTAL { get; set; }
+        public Nullable<double> IMPUESTOS { get; set; }
         public string DETALLE { get; set; }
         public string CONCEPTO { get; set; }
         public System.DateTime FECHA_FACTURA { get; set; }
+        public double MONTO { get; set; }
     
         public virtual CLIENTES CLIENTES { get; set; }
+        public virtual USUARIOS USUARIOS { get; set; }
         public virtual OUTSOURCING_S OUTSOURCING_S { get; set; }
         public virtual PROVEEDORES PROVEEDORES { get; set; }
-        public virtual USUARIOS USUARIOS { get; set; }
     }
 }

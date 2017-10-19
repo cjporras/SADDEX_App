@@ -38,8 +38,8 @@ namespace Datos.Implementaciones
             {
                 outsourcing.FK_USUARIO = obj.FK_USUARIO;
                 outsourcing.FK_LISTA_OUTSOURCING = obj.FK_LISTA_OUTSOURCING;
-                outsourcing.FK_OBRA = obj.FK_OBRA;
                 outsourcing.FECHA_CONTRATACION = obj.FECHA_CONTRATACION;
+
             }
         }
 

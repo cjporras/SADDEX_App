@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class UbicacionExpedienteLN : clsInterfaceLogica<UBICACION_EXPEDIENTES>
+    public class UbicacionExpedienteLN : clsInterfaceLogica<UBICACION_EXPEDIENTES>
     {
         SADDEXEntities context;
         UbicacionExpedienteAD UbicacionExpedienteAD;

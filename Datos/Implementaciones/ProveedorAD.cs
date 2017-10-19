@@ -29,10 +29,16 @@ namespace Datos.Implementaciones
             if(proveedor != null)
             {
                 proveedor.NOMBRE_PROVEEDOR = obj.NOMBRE_PROVEEDOR;
-                proveedor.UBICACION = obj.UBICACION;
                 proveedor.TELEFONO_1 = obj.TELEFONO_1;
                 proveedor.TELEFONO_2 = obj.TELEFONO_2;
                 proveedor.CEDULA_JURIDICA = obj.CEDULA_JURIDICA;
+                proveedor.CORREO_ELECTRONICO = obj.CORREO_ELECTRONICO;
+                proveedor.PROVINCIA = obj.PROVINCIA;
+                proveedor.CANTON = obj.CANTON;
+                proveedor.DISTRITO = obj.DISTRITO;
+                proveedor.OTRAS_SENAS = obj.OTRAS_SENAS;
+                proveedor.OBSERVACIONES = obj.OBSERVACIONES;
+                proveedor.SERVICIO_PROVEEDOR = obj.SERVICIO_PROVEEDOR;
             }
         }
 

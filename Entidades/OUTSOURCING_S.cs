@@ -18,18 +18,19 @@ namespace Entidades
         public OUTSOURCING_S()
         {
             this.FACTURAS = new HashSet<FACTURAS>();
+            this.OBRAS = new HashSet<OBRAS>();
         }
     
         public int ID_OUTSOURCING { get; set; }
         public int FK_USUARIO { get; set; }
         public int FK_LISTA_OUTSOURCING { get; set; }
-        public int FK_OBRA { get; set; }
         public System.DateTime FECHA_CONTRATACION { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FACTURAS> FACTURAS { get; set; }
         public virtual LISTAS_OUTSOURCING LISTAS_OUTSOURCING { get; set; }
-        public virtual OBRAS OBRAS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OBRAS> OBRAS { get; set; }
         public virtual USUARIOS USUARIOS { get; set; }
     }
 }

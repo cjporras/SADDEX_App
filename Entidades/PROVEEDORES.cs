@@ -23,10 +23,16 @@ namespace Entidades
     
         public int ID_PROVEEDOR { get; set; }
         public string NOMBRE_PROVEEDOR { get; set; }
-        public string UBICACION { get; set; }
         public int TELEFONO_1 { get; set; }
         public Nullable<int> TELEFONO_2 { get; set; }
         public string CEDULA_JURIDICA { get; set; }
+        public string CORREO_ELECTRONICO { get; set; }
+        public string PROVINCIA { get; set; }
+        public string CANTON { get; set; }
+        public string DISTRITO { get; set; }
+        public string OTRAS_SENAS { get; set; }
+        public string OBSERVACIONES { get; set; }
+        public string SERVICIO_PROVEEDOR { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FACTURAS> FACTURAS { get; set; }

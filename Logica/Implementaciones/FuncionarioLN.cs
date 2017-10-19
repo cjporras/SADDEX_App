@@ -10,7 +10,7 @@ using Logica.Interface;
 
 namespace Logica.Implementaciones
 {
-    class FuncionarioLN: clsInterfaceLogica<FUNCIONARIOS>
+    public class FuncionarioLN: clsInterfaceLogica<FUNCIONARIOS>
     {
         SADDEXEntities context;
         FuncionarioAD FuncionarioAD;
