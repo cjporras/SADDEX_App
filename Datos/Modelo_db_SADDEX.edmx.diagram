@@ -5,46 +5,46 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0b0ae149b28a40ddb3c0e89f6e1bf7d7" Name="Diagram1">
-        <EntityTypeShape EntityType="SADDEXModel.CLIENTES" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADDEXModel.ESTADO_TRAMITES" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADDEXModel.EXPEDIENTES_DIGITALES" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADDEXModel.FUNCIONARIOS" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADDEXModel.LISTAS_OUTSOURCING" Width="1.5" PointX="10.5" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADDEXModel.PUESTOS" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADDEXModel.REQUISITOS_INICIALES" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADDEXModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADDEXModel.TIPO_BONOS" Width="1.5" PointX="7.5" PointY="14.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADDEXModel.UBICACION_EXPEDIENTES" Width="1.5" PointX="12.75" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SADDEXModel.USUARIOS" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
-        <AssociationConnector Association="SADDEXModel.FK_EXPEDIENTES_DIGITALES_CLIENTES" ManuallyRouted="false" />
-        <AssociationConnector Association="SADDEXModel.FK_REQUISITOS_INICIALES_CLIENTES" ManuallyRouted="false" />
-        <AssociationConnector Association="SADDEXModel.FK_TIPO_BONOS_CLIENTES" ManuallyRouted="false" />
-        <AssociationConnector Association="SADDEXModel.FK_EXPEDIENTES_DIGITALES_ESTADO_TRAMITES" ManuallyRouted="false" />
-        <AssociationConnector Association="SADDEXModel.FK_EXPEDIENTES_DIGITALES_REQUISITOS_INICIALES" ManuallyRouted="false" />
-        <AssociationConnector Association="SADDEXModel.FK_EXPEDIENTES_DIGITALES_USUARIOS" ManuallyRouted="false" />
-        <AssociationConnector Association="SADDEXModel.FK_UBICACION_EXPEDIENTES_EXPEDIENTES_DIGITALES" ManuallyRouted="false" />
-        <AssociationConnector Association="SADDEXModel.FK_FUNCIONARIOS_PUESTOS" ManuallyRouted="false" />
-        <AssociationConnector Association="SADDEXModel.FK_USUARIOS_FUNCIONARIOS" ManuallyRouted="false" />
-        <AssociationConnector Association="SADDEXModel.FK_UBICACION_EXPEDIENTES_USUARIOS" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SADDEXModel.CATEGORIA_BONOS" Width="1.5" PointX="3.375" PointY="0.875" />
+        <EntityTypeShape EntityType="SADDEXModel.CATEGORIA_BONOS" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="SADDEXModel.CLIENTES" Width="1.5" PointX="0.75" PointY="10.5" />
+        <EntityTypeShape EntityType="SADDEXModel.ESTADO_TRAMITES" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="SADDEXModel.EXPEDIENTES_DIGITALES" Width="1.5" PointX="5.25" PointY="10.125" />
+        <EntityTypeShape EntityType="SADDEXModel.FACTURAS" Width="1.5" PointX="3" PointY="14.75" />
+        <EntityTypeShape EntityType="SADDEXModel.FUNCIONARIOS" Width="1.5" PointX="3.75" PointY="27.5" />
+        <EntityTypeShape EntityType="SADDEXModel.LISTAS_OUTSOURCING" Width="1.5" PointX="6" PointY="33.125" />
+        <EntityTypeShape EntityType="SADDEXModel.OBRAS" Width="1.5" PointX="10.5" PointY="10.5" />
+        <EntityTypeShape EntityType="SADDEXModel.OUTSOURCING_S" Width="1.5" PointX="8.25" PointY="30" />
+        <EntityTypeShape EntityType="SADDEXModel.PAGOS_X_PROVEEDORES" Width="1.5" PointX="8.25" PointY="22.5" />
+        <EntityTypeShape EntityType="SADDEXModel.PROVEEDORES" Width="1.5" PointX="0.75" PointY="16" />
+        <EntityTypeShape EntityType="SADDEXModel.PUESTOS" Width="1.5" PointX="1.5" PointY="29" />
+        <EntityTypeShape EntityType="SADDEXModel.REQUISITOS_INICIALES" Width="1.5" PointX="3" PointY="9.25" />
+        <EntityTypeShape EntityType="SADDEXModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2.125" />
+        <EntityTypeShape EntityType="SADDEXModel.TIPO_BONOS" Width="1.5" PointX="3" PointY="24.25" />
+        <EntityTypeShape EntityType="SADDEXModel.UBICACION_EXPEDIENTES" Width="1.5" PointX="7.5" PointY="11" />
+        <EntityTypeShape EntityType="SADDEXModel.USUARIOS" Width="1.5" PointX="6" PointY="28.375" />
         <AssociationConnector Association="SADDEXModel.FK_EXPEDIENTES_DIGITALES_CATEGORIA_BONOS" />
-        <EntityTypeShape EntityType="SADDEXModel.FACTURAS" Width="1.5" PointX="15" PointY="5" />
+        <AssociationConnector Association="SADDEXModel.FK_EXPEDIENTES_DIGITALES_CLIENTES" />
         <AssociationConnector Association="SADDEXModel.FK_FACTURAS_CLIENTES" />
-        <AssociationConnector Association="SADDEXModel.FK_FACTURAS_USUARIOS" />
-        <EntityTypeShape EntityType="SADDEXModel.OBRAS" Width="1.5" PointX="15" PointY="10.75" />
+        <AssociationConnector Association="SADDEXModel.FK_REQUISITOS_INICIALES_CLIENTES" />
+        <AssociationConnector Association="SADDEXModel.FK_TIPO_BONOS_CLIENTES" />
+        <AssociationConnector Association="SADDEXModel.FK_EXPEDIENTES_DIGITALES_ESTADO_TRAMITES" />
         <AssociationConnector Association="SADDEXModel.FK_EXPEDIENTES_DIGITALES_OBRAS" />
+        <AssociationConnector Association="SADDEXModel.FK_EXPEDIENTES_DIGITALES_REQUISITOS_INICIALES" />
+        <AssociationConnector Association="SADDEXModel.FK_EXPEDIENTES_DIGITALES_USUARIOS" />
         <AssociationConnector Association="SADDEXModel.FK_OBRAS_EXPEDIENTES_DIGITALES" />
-        <AssociationConnector Association="SADDEXModel.FK_OBRAS_USUARIOS" />
-        <EntityTypeShape EntityType="SADDEXModel.OUTSOURCING_S" Width="1.5" PointX="12.75" PointY="6.75" />
+        <AssociationConnector Association="SADDEXModel.FK_UBICACION_EXPEDIENTES_EXPEDIENTES_DIGITALES" />
         <AssociationConnector Association="SADDEXModel.FK_FACTURAS_OUTSOURCING_S" />
+        <AssociationConnector Association="SADDEXModel.FK_FACTURAS_PROVEEDORES" />
+        <AssociationConnector Association="SADDEXModel.FK_FACTURAS_USUARIOS" />
+        <AssociationConnector Association="SADDEXModel.FK_FUNCIONARIOS_PUESTOS" />
+        <AssociationConnector Association="SADDEXModel.FK_USUARIOS_FUNCIONARIOS" />
         <AssociationConnector Association="SADDEXModel.FK_OUTSOURCING_S_LISTAS_OUTSOURCING" />
         <AssociationConnector Association="SADDEXModel.FK_OBRAS_OUTSOURCING_S" />
+        <AssociationConnector Association="SADDEXModel.FK_OBRAS_USUARIOS" />
         <AssociationConnector Association="SADDEXModel.FK_OUTSOURCING_S_USUARIOS" />
-        <EntityTypeShape EntityType="SADDEXModel.PAGOS_X_PROVEEDORES" Width="1.5" PointX="10.5" PointY="5.75" />
-        <AssociationConnector Association="SADDEXModel.FK_PAGOS_X_PROVEEDORES_USUARIOS" />
-        <EntityTypeShape EntityType="SADDEXModel.PROVEEDORES" Width="1.5" PointX="8.25" PointY="4.25" />
-        <AssociationConnector Association="SADDEXModel.FK_FACTURAS_PROVEEDORES" />
         <AssociationConnector Association="SADDEXModel.FK_PAGOS_X_PROVEEDORES_PROVEEDORES" />
+        <AssociationConnector Association="SADDEXModel.FK_PAGOS_X_PROVEEDORES_USUARIOS" />
+        <AssociationConnector Association="SADDEXModel.FK_UBICACION_EXPEDIENTES_USUARIOS" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

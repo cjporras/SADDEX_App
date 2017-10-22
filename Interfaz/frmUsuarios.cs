@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
+using Logica;
+using Logica.Implementaciones;
 
 namespace SADDEX
 {
     public partial class frmUsuarios : Form
     {
+
+        USUARIOS usuarios = new USUARIOS();
+        UsuarioLN usuarios_L = new UsuarioLN();
+
         public frmUsuarios()
         {
             InitializeComponent();

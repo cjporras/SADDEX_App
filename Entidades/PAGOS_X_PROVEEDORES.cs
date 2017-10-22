@@ -21,7 +21,7 @@ namespace Entidades
         public string NUMERO_CHEQUE { get; set; }
         public int FK_USUARIO { get; set; }
     
-        public virtual USUARIOS USUARIOS { get; set; }
         public virtual PROVEEDORES PROVEEDORES { get; set; }
+        public virtual USUARIOS USUARIOS { get; set; }
     }
 }

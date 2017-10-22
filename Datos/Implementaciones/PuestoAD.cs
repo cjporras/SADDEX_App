@@ -44,11 +44,16 @@ namespace Datos.Implementaciones
         public IEnumerable<PUESTOS> devolverLISTA_D()
         {
             return this.context.PUESTOS;
-        }
+        }       
 
         public PUESTOS buscarporID(int id)
         {
             return this.context.PUESTOS.Where(puest => puest.ID_PUESTO == id).FirstOrDefault();
+        }
+
+        IEnumerable<PUESTOS> clsInterfaceDatos<PUESTOS>.devolverLISTA_D()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -35,7 +35,7 @@
             this.txtOtrasSeñas = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCorreoElec = new System.Windows.Forms.TextBox();
-            this.cbmDistrito = new System.Windows.Forms.ComboBox();
+            this.cmbDistrito = new System.Windows.Forms.ComboBox();
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
@@ -62,7 +62,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dtpFechaCesantia = new System.Windows.Forms.DateTimePicker();
-            this.txtPuesto = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -75,6 +74,7 @@
             this.limpiarCamposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.cmbPuestos = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -85,30 +85,41 @@
             // 
             // dgvFuncionario
             // 
+            this.dgvFuncionario.AllowUserToAddRows = false;
+            this.dgvFuncionario.AllowUserToDeleteRows = false;
+            this.dgvFuncionario.AllowUserToResizeColumns = false;
+            this.dgvFuncionario.AllowUserToResizeRows = false;
+            this.dgvFuncionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvFuncionario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionario.Location = new System.Drawing.Point(12, 313);
+            this.dgvFuncionario.MultiSelect = false;
             this.dgvFuncionario.Name = "dgvFuncionario";
+            this.dgvFuncionario.ReadOnly = true;
+            this.dgvFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFuncionario.Size = new System.Drawing.Size(1070, 217);
             this.dgvFuncionario.TabIndex = 47;
             // 
             // txtTelefonoOpcional
             // 
             this.txtTelefonoOpcional.Location = new System.Drawing.Point(710, 212);
-            this.txtTelefonoOpcional.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefonoOpcional.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefonoOpcional.Mask = "0000-00-00";
             this.txtTelefonoOpcional.Name = "txtTelefonoOpcional";
             this.txtTelefonoOpcional.Size = new System.Drawing.Size(177, 20);
             this.txtTelefonoOpcional.TabIndex = 84;
+            this.txtTelefonoOpcional.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(542, 212);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Mask = "0000-00-00";
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(163, 20);
             this.txtTelefono.TabIndex = 83;
+            this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtOtrasSeñas
             // 
@@ -138,23 +149,25 @@
             this.txtCorreoElec.Size = new System.Drawing.Size(171, 23);
             this.txtCorreoElec.TabIndex = 82;
             // 
-            // cbmDistrito
+            // cmbDistrito
             // 
-            this.cbmDistrito.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbmDistrito.FormattingEnabled = true;
-            this.cbmDistrito.Location = new System.Drawing.Point(710, 160);
-            this.cbmDistrito.Name = "cbmDistrito";
-            this.cbmDistrito.Size = new System.Drawing.Size(177, 25);
-            this.cbmDistrito.TabIndex = 64;
+            this.cmbDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDistrito.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDistrito.FormattingEnabled = true;
+            this.cmbDistrito.Location = new System.Drawing.Point(710, 160);
+            this.cmbDistrito.Name = "cmbDistrito";
+            this.cmbDistrito.Size = new System.Drawing.Size(177, 25);
+            this.cmbDistrito.TabIndex = 64;
             // 
             // txtCedula
             // 
             this.txtCedula.Location = new System.Drawing.Point(12, 114);
-            this.txtCedula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(2);
             this.txtCedula.Mask = "0-0000-0000";
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(155, 20);
             this.txtCedula.TabIndex = 81;
+            this.txtCedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -178,9 +191,11 @@
             // 
             // cmbCanton
             // 
+            this.cmbCanton.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCanton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCanton.FormattingEnabled = true;
             this.cmbCanton.Location = new System.Drawing.Point(542, 160);
+            this.cmbCanton.MaxDropDownItems = 15;
             this.cmbCanton.Name = "cmbCanton";
             this.cmbCanton.Size = new System.Drawing.Size(163, 25);
             this.cmbCanton.TabIndex = 62;
@@ -209,17 +224,33 @@
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProvincia.FormattingEnabled = true;
+            this.cmbProvincia.Items.AddRange(new object[] {
+            "San José",
+            "Alajuela",
+            "Cartago",
+            "Heredia",
+            "Guanacaste",
+            "Puntarenas\t",
+            "Limón"});
             this.cmbProvincia.Location = new System.Drawing.Point(365, 160);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(171, 25);
             this.cmbProvincia.TabIndex = 60;
+            this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
             // cmbSexo
             // 
-            this.cmbSexo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSexo.BackColor = System.Drawing.Color.White;
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSexo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino",
+            "Otro"});
             this.cmbSexo.Location = new System.Drawing.Point(177, 161);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(177, 25);
@@ -407,14 +438,6 @@
             this.dtpFechaCesantia.Size = new System.Drawing.Size(177, 23);
             this.dtpFechaCesantia.TabIndex = 87;
             // 
-            // txtPuesto
-            // 
-            this.txtPuesto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPuesto.Location = new System.Drawing.Point(905, 210);
-            this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(177, 23);
-            this.txtPuesto.TabIndex = 90;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -563,12 +586,23 @@
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
+            // cmbPuestos
+            // 
+            this.cmbPuestos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPuestos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPuestos.FormattingEnabled = true;
+            this.cmbPuestos.Location = new System.Drawing.Point(905, 207);
+            this.cmbPuestos.Name = "cmbPuestos";
+            this.cmbPuestos.Size = new System.Drawing.Size(177, 25);
+            this.cmbPuestos.TabIndex = 103;
+            // 
             // frmFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1103, 542);
+            this.Controls.Add(this.cmbPuestos);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label15);
@@ -578,7 +612,6 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.txtPuesto);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.dtpFechaCesantia);
@@ -589,7 +622,7 @@
             this.Controls.Add(this.txtOtrasSeñas);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCorreoElec);
-            this.Controls.Add(this.cbmDistrito);
+            this.Controls.Add(this.cmbDistrito);
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dtpFechaNac);
@@ -619,6 +652,7 @@
             this.Name = "frmFuncionarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionarios";
+            this.Load += new System.EventHandler(this.frmFuncionarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -638,7 +672,7 @@
         private System.Windows.Forms.TextBox txtOtrasSeñas;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCorreoElec;
-        private System.Windows.Forms.ComboBox cbmDistrito;
+        private System.Windows.Forms.ComboBox cmbDistrito;
         private System.Windows.Forms.MaskedTextBox txtCedula;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpFechaNac;
@@ -665,7 +699,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker dtpFechaCesantia;
-        private System.Windows.Forms.TextBox txtPuesto;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -678,5 +711,6 @@
         private System.Windows.Forms.ToolStripMenuItem limpiarCamposToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.ComboBox cmbPuestos;
     }
 }

@@ -66,7 +66,7 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<PUESTOS> devolverLISTA_L()
+        public IEnumerable<object> devolverLISTA_L()
         {
             return PuestoAD.devolverLISTA_D();
         }
@@ -75,5 +75,12 @@ namespace Logica.Implementaciones
         {
             return PuestoAD.buscarporID(id);
         }
+
+        IEnumerable<PUESTOS> clsInterfaceLogica<PUESTOS>.devolverLISTA_L()
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }

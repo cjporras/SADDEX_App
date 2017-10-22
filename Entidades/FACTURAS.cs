@@ -28,8 +28,8 @@ namespace Entidades
         public double MONTO { get; set; }
     
         public virtual CLIENTES CLIENTES { get; set; }
-        public virtual USUARIOS USUARIOS { get; set; }
         public virtual OUTSOURCING_S OUTSOURCING_S { get; set; }
         public virtual PROVEEDORES PROVEEDORES { get; set; }
+        public virtual USUARIOS USUARIOS { get; set; }
     }
 }

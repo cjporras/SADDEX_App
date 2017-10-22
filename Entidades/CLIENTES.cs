@@ -18,9 +18,9 @@ namespace Entidades
         public CLIENTES()
         {
             this.EXPEDIENTES_DIGITALES = new HashSet<EXPEDIENTES_DIGITALES>();
+            this.FACTURAS = new HashSet<FACTURAS>();
             this.REQUISITOS_INICIALES = new HashSet<REQUISITOS_INICIALES>();
             this.TIPO_BONOS = new HashSet<TIPO_BONOS>();
-            this.FACTURAS = new HashSet<FACTURAS>();
         }
     
         public int ID_CLIENTE { get; set; }
@@ -42,10 +42,10 @@ namespace Entidades
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EXPEDIENTES_DIGITALES> EXPEDIENTES_DIGITALES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FACTURAS> FACTURAS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REQUISITOS_INICIALES> REQUISITOS_INICIALES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TIPO_BONOS> TIPO_BONOS { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FACTURAS> FACTURAS { get; set; }
     }
 }

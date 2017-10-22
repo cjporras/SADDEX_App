@@ -67,7 +67,7 @@ namespace Logica.Implementaciones
             }
         }
 
-        public IEnumerable<FUNCIONARIOS> devolverLISTA_L()
+        public IEnumerable<object> devolverLISTA_L()
         {
             return FuncionarioAD.devolverLISTA_D();
         }
@@ -76,5 +76,11 @@ namespace Logica.Implementaciones
         {
             return FuncionarioAD.buscarporID(id);
         }
+
+        IEnumerable<FUNCIONARIOS> clsInterfaceLogica<FUNCIONARIOS>.devolverLISTA_L()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
